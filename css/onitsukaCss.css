@@ -1,0 +1,589 @@
+.aboreto-regular {
+  font-family: "Aboreto", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.abril-fatface-regular {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*--------------- 노멀라이즈 시작 ---------------*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+em {
+  font-style: normal;
+}
+
+body {
+  font-family: 'Pragati_Narrow';
+  font-weight: 400;
+  font-style: normal;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+
+.gradient_box {
+  width: 100%;
+  height: 400px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(1, 3, 7, 1) 100%);
+}
+
+.gradient_box_reverse {
+  width: 100%;
+  height: 400px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(1, 3, 7, 1) 100%);
+}
+
+.txt_grey {
+  color: #A4A4A4;
+  font-size: 12px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border: none;
+  vertical-align: top;
+}
+
+/* from Chopard */
+a.btn,
+button.btn,
+button,
+.btn {
+  cursor: pointer;
+  margin: 0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  /* font-weight: 400; */
+  color: #010307;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15sease-in-out, background-color 0.15sease-in-out, border-color 0.15sease-in-out, box-shadow 0.15sease-in-out;
+  border-radius: 2px;
+  padding: 15px 12px 15px 12px;
+  font-family: Engravers;
+  -webkit-font-smoothing: antialiased;
+  color: #010307;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+
+
+/*--------------- 커스텀 시작 ---------------*/
+#header {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  margin: 0 auto;
+  position: relative;
+}
+
+#header .headerTnb {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+#header .headerTnb p {
+  display: block;
+  padding: 10px;
+}
+
+#header .header_wrap {
+  width: 100%;
+  height: 126px;
+  min-width: 1080px;
+  background-color: black;
+  padding: 0px 110px;
+  align-items: center;
+}
+
+.header_wrap .logo_wrap a img {
+  display: block;
+  width: 78px;
+  padding: 30px 0px;
+}
+
+#header .header_wrap .menu_wrap {
+  height: 100%;
+}
+
+#header .header_wrap .menu_wrap ul li {
+  height: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+#header .header_wrap .menu_wrap ul li a {
+  display: block;
+  color: #fff;
+  padding: 10px;
+}
+
+/* #header .header_wrap .menu_wrap ul li a {
+  background-image: url(	https://mcc-static.ot-sea-prod.com/static/version1…itsuka_korea/ko_KR/images/ico_header_login_01.svg);
+  background-size: 14px auto;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0px;
+  text-decoration: none;
+  color: #fff;
+} */
+
+/* #main .main_visual {
+  background-image: url(/onitsukatiger_images/bnr_denim.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+} */
+#main .main_visual img {
+  width: 100%;
+  height: 1080px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+/*-------------------- 신제품 섹션 시작 --------------------*/
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*---------- @media (min-width: 1025px) ----------*/
+@media screen and (min-device-width: 1025px) {
+  .new_onitsuka_section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .new_onitsuka_section .title h2 {
+    font-family: 'PragatiNarrow';
+    font-weight: 700;
+    font-size: 128px;
+    letter-spacing: -7px;
+    line-height: 0.9;
+    display: block;
+    padding: 30px 0;
+  }
+
+  .new_onitsuka_section .title a {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .product_section {
+    position: relative;
+    margin: 217px auto 0;
+    padding: 0 20px;
+    width: 1440px;
+  }
+
+  .product_section .new_onitsuka_section .new_products {
+    width: calc(100% - 800px);
+  }
+
+  /*--------------- introduction part 시작 ---------------*/
+  .intro_wrap {
+    outline: 1px solid red;
+    text-align: center;
+  }
+
+  .intro_wrap .intro_title {
+    padding: 30px 0;
+  }
+
+  .intro_wrap .intro_title img {
+    width: 500px;
+  }
+
+  /*--------------- introduction part 끝 ---------------*/
+}
+
+/*-------------------- 신제품 섹션 시작 --------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- from THE ONITSUKA page ---------------*/
+.custom-button-shop-now a {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.custom-button-shop-now a:hover {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.custom-button-scroll {
+  display: none !important;
+}
+
+.custom-button-scroll.fixed {
+  display: block !important;
+  position: fixed;
+  top: 120px;
+  z-index: 1000;
+  right: calc((100vw - 1240px) / 2);
+}
+
+.custom-button-scroll.fixed a {
+  background: #000 !important;
+  color: #fff !important;
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  font-size: 21px;
+  vertical-align: middle;
+  text-align: center;
+  border: 2px solid #fff;
+  padding: 0;
+}
+
+.custom-button-scroll.fixed a:hover {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.page-main .category-view {
+  text-align: inherit;
+}
+
+.onitsuka-logo {
+  margin: 0 auto;
+}
+
+.flexbox-image {
+  filter: brightness(1);
+}
+
+.flexbox-image:hover {
+  transition: all .3s ease-in-out;
+  filter: brightness(0.2);
+}
+
+.block-banner-image img {
+  width: 100%;
+}
+
+.sub-title-block {
+  width: 87%;
+  margin: 20px auto 45px !important;
+  font-weight: normal;
+}
+
+.cms-page-view .page-main .columns {
+  padding-top: 0;
+}
+
+a.pagebuilder-button-link:active {
+  color: #7f0019;
+  text-decoration: none;
+}
+
+.copy-block p {
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.button-shop-now {
+  margin-bottom: 50px;
+}
+
+.onitsuka-logo img.pagebuilder-mobile-only {
+  margin: 0 auto;
+  display: block;
+}
+
+.cms-content-wrap .see-more-content {
+  font-family: 'Matter , sans-serif';
+  line-height: 1.42857143;
+  margin: 0 10px 10px 0;
+  padding: 14px 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cms-content-wrap {
+  box-sizing: border-box;
+  max-width: 1240px;
+  margin: 0 auto;
+  font-family: 'Matter , sans-serif';
+}
+
+.description-text {
+  max-width: 1240px;
+  margin: 0 auto 3.2rem;
+  padding: 0 15px;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.cms-content-wrap .content-label {
+  padding: 1.6rem 15px 3.2rem;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Matter , sans-serif';
+}
+
+.cms-content-wrap .content-box {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 3.2rem;
+  padding-bottom: 3.2rem;
+}
+
+.cms-content-wrap .content-desc {
+  margin: 0;
+  font-size: 16px;
+  padding: 0 15px;
+}
+
+.cms-content-wrap .content-image img {
+  padding: 0 15px;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: 2.4rem;
+  height: initial;
+}
+
+.flex-between-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button-see-more {
+  display: none;
+  justify-content: center;
+  margin: 50px 0;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Matter', 'Matter , sans-serif';
+}
+
+@media only screen and (max-width: 768px) {
+  .custom-button-scroll.fixed {
+    top: 19vw;
+    right: 0;
+  }
+
+  .custom-button-scroll.fixed a {
+    height: 70px;
+    width: 70px;
+    font-size: 15px;
+  }
+
+  .cms-content-wrap .content-box {
+    width: 100%;
+  }
+
+  .cms-content-wrap .content-image {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cms-content-wrap .content-image img {
+    width: auto;
+    max-width: 80%;
+    margin: 0 auto 2.4rem;
+  }
+
+  .cms-content-wrap .content-box {
+    margin-bottom: 0;
+  }
+
+  .cms-content-wrap .content-wrap-last {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, overflow 0s;
+  }
+
+  .cms-content-wrap .content-wrap-last.active {
+    max-height: initial;
+    overflow: auto;
+    transition: max-height 0.5s, overflow 0.5s 0.5s;
+  }
+
+  .button-see-more {
+    display: flex;
+  }
+
+  body #sound_btn {
+    width: 106px;
+    height: 24px;
+    top: 10px
+  }
+
+  body #sound_btn .inner {
+    width: 106px;
+    height: 24px;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-left: 26px
+  }
+
+  body #sound_btn .icon {
+    width: 7.5px;
+    height: 12px;
+    left: 11px;
+    top: 6px
+  }
+}
+
+.page-wrapper-fullwidth .page-wrapper .page-main video {
+  width: 100%;
+}
+
+div[data-content-type="html"] {
+  position: relative;
+}
+
+body #sound_btn {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  width: 124px;
+  height: 28px;
+  cursor: pointer;
+  border: #fff 1px solid;
+  border-right: none;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
+  transition: color 0.3s linear, background-color 0.3s linear;
+  font-family: 'Matter , sans-serif';
+  font-weight: 600;
+  z-index: 3
+}
+
+body #sound_btn .inner {
+  position: absolute;
+  width: 124px;
+  height: 28px;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-left: 26px;
+  box-sizing: border-box;
+  line-height: 1;
+  opacity: 0
+}
+
+body #sound_btn .icon {
+  position: absolute;
+  display: block;
+  width: 9px;
+  height: 14px;
+  left: 11px;
+  top: 5px;
+  opacity: 0;
+  transition: opacity 0.3s linear
+}
+
+body #sound_btn .inner.on,
+body #sound_btn .icon.wh {
+  opacity: 1
+}
+
+@media screen and (min-width: 769px) {
+  body #sound_btn:hover {
+    background-color: #fff;
+    color: #000
+  }
+
+  body #sound_btn:hover .icon.wh {
+    opacity: 0
+  }
+
+  body #sound_btn:hover .icon.bk {
+    opacity: 1
+  }
+}
+
+body #sound_btn.on .inner.on {
+  opacity: 0
+}
+
+body #sound_btn.on .inner.off {
+  opacity: 1
+}

@@ -1,0 +1,68 @@
+/*-------------------- 폰트 --------------------*/
+/*---------- Aboreto ----------*/
+@font-face {
+  font-family: 'Aboreto';
+  font-style: normal;
+  font-weight: 400;
+  src: local("※"), url(/fonts/Aboreto/Aboreto-Regular.ttf) format("ttf");
+}
+
+/*---------- Abril_Fatface ----------*/
+@font-face {
+  font-family: 'Abril_Fatface';
+  font-style: normal;
+  font-weight: 400;
+  src: local("※"), url(/fonts/Abril_Fatface/AbrilFatface-Regular.ttf) format("ttf");
+}
+
+/*---------- Pragati-Narrow ----------*/
+@font-face {
+  font-family: 'Pragati_Narrow';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pragati_Narrow'), url(fonts/PragatiNarrow/PragatiNarrow-Regular.ttf) format("ttf"), url(fonts/PragatiNarrow/PragatiNarrow-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Pragati_Narrow';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Pragati_Narrow'), url(fonts/PragatiNarrow/PragatiNarrow-Bold.ttf) format("ttf"), url(fonts/PragatiNarrow/PragatiNarrow-Bold.woff) format('woff');
+}
+
+/*-------------------- Pretendard --------------------*/
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+  src: url('./font/Pretendard-Regular.woff2') format('woff2'),
+    url('./font/Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+  src: url('./font/Pretendard-Medium.woff2') format('woff2'),
+    url('./font/Pretendard-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+  src: url('./font/Pretendard-SemiBold.woff2') format('woff2'),
+    url('./font/Pretendard-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+  src: url('./font/Pretendard-Bold.woff2') format('woff2'),
+    url('./font/Pretendard-Bold.woff') format('woff');
+}

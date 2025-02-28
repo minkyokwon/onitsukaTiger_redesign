@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- lenis (Smooth Scroll) -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <!-- ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+  <!-- fullPage js -->
+  <script src="./js/lib/jquery.fullpage.js"></script>
+  <link rel="stylesheet" href="./css/jquery.fullpage.css">
+  <!-- 외부 파일 -->
+  <link rel="stylesheet" href="./css/onitsukaCss.css">
+  <link rel="stylesheet" href="./css/fonts.css">
+  <script src="./js/onitsukaScript.js"></script>
+  <!-- 구글 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Aboreto&family=Abril+Fatface&family=Pragati+Narrow:wght@400;700&display=swap"
+    rel="stylesheet">
+  <title>Onitsuka Tiger Korea</title>
+  <style>
+    .aboreto-regular {
+      font-family: "Aboreto", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .abril-fatface-regular {
+      font-family: "Abril Fatface", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border: none;
+      vertical-align: top;
+    }
+
+    #fullpage .section {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /*---------- 오니츠카 브랜드 시작 ----------*/
+    #brand .pagebuilder-column {
+      width: 100%;
+      align-self: stretch;
+    }
+
+    #brand .pagebuilder-column .onitsuka_tm_logo {
+      margin: 0 auto;
+    }
+
+    #brand .pagebuilder-column .onitsuka_tm_logo>img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    #brand .pagebuilder-column .sub-title {
+      width: 87%;
+      margin: 20px auto 45px;
+    }
+
+    #brand .pagebuilder-column .description-text {
+      max-width: 1240px;
+      margin: 0 auto 2.2rem;
+      /* margin: 0 auto 3.2rem; */
+      padding: 0 15px;
+      width: 100%;
+      text-align: left;
+      box-sizing: border-box;
+    }
+
+    /*---------- @media (min-width: 1025px) ----------*/
+    @media screen and (min-width: 1025px) {
+      #brand .pagebuilder-column .sub-title {
+        width: 87%;
+        margin: 20px auto 45px;
+      }
+
+      #brand .brand_container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+      }
+
+      #brand .brand_container .brand_wrap {
+        max-width: 1440px;
+        display: flex;
+        margin: 0 auto;
+        padding: 144px 0;
+      }
+
+      #brand .brand_container .brand_wrap ul {
+        align-items: center;
+        gap: 30px;
+      }
+
+      #brand .brand_container .brand_wrap ul li {
+        width: calc(100%/3);
+        height: 620px;
+        overflow: hidden !important;
+      }
+
+      #brand .brand_container .brand_wrap ul li img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <!---------- 오니츠카 브랜드 시작 ---------->
+    <section id="brand">
+      <div class="pagebuilder-column-group flex column">
+        <div class="pagebuilder-column">
+          <div class="onitsuka_tm_logo">
+            <img src="/onitsukatiger_images/oni_logo/onitsuka_tm_logo_wide_full.jpg" alt="">
+          </div>
+          <div class="sub-title">
+            <p style="text-align: center;"><span style="font-size: 16px;"><strong>&nbsp;Made in Japan with pride, THE
+                  ONITSUKA™ collection is the new, redefined luxury. Every detail has been </strong></span><strong
+                style="font-size: 16px;">meticulously engineered for both form and function. We seamlessly combine
+                timeless designs with </strong><strong style="font-size: 16px;">traditional craftsmanship, comfort
+                technology and Japanese precision. We believe in practical </strong><strong
+                style="font-size: 16px;">enjoyment over extravagant opulence.</strong></p>
+          </div>
+          <div class="description-text">
+            <p style="text-align: center;"><strong><span style="font-size: 16px;">THE ONITSUKA™ footwear is
+                  characterized by unique hybrid designs, juxtaposing the sophistication of dress shoes and sneakers,
+                  pursuing light comfort. Introducing story behind Japanese craftsmanship hidden in each
+                  pair.</span></strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="brand_container">
+        <div class="brand_wrap">
+          <ul class="flex">
+            <li>
+              <img src="/onitsukatiger_images/brands_wrap/brand_yellow_tiger_pic.jpg" alt="">
+            </li>
+            <li>
+              <img src="/onitsukatiger_images/brands_wrap/brand_otiger_pic.png" alt="">
+            </li>
+            <li>
+              <img src="/onitsukatiger_images/brands_wrap/brand_the_onitsuka_pic.jpg" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!---------- 오니츠카 브랜드 끝 ---------->
+  </div>
+
+</body>
+
+</html>

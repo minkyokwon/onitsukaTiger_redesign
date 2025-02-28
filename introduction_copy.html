@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- lenis (Smooth Scroll) -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <!-- ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+  <!-- swiper js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- marquee -->
+  <script src="https://cdn.jsdelivr.net/npm/marquee.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js"></script>
+  <!-- fullPage js -->
+  <script src="./js/lib/jquery.fullpage.js"></script>
+  <link rel="stylesheet" href="./css/jquery.fullpage.css">
+  <!-- 외부 파일 -->
+  <link rel="stylesheet" href="./css/onitsukaCss.css">
+  <link rel="stylesheet" href="./css/fonts.css">
+  <script src="./js/onitsukaScript.js"></script>
+  <title>Onitsuka Tiger Korea</title>
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- <section class="intro_wrap">
+      <div class="intro_title">
+        <img src="/onitsukatiger_images/oni_logo/onitsuka_tm_logo.png" alt="">
+      </div>
+      <div class="intro_sub_1"></div>
+      <div class="intro_sub_2"></div>
+    </section> -->
+    <div data-content-type="row" data-appearance="full-bleed" data-enable-parallax="0" data-parallax-speed="0.5"
+      data-background-images="{}" data-background-type="image" data-video-loop="true"
+      data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="main"
+      data-pb-style="DS5DI6R">
+      <div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12"
+        data-element="main">
+        <div class="pagebuilder-column" data-content-type="column" data-appearance="full-height"
+          data-background-images="{}" data-element="main" data-pb-style="YLAMF7X">
+          <figure class="onitsuka-logo" data-content-type="image" data-appearance="full-width" data-element="main"
+            data-pb-style="K68SJIR"><img class="pagebuilder-mobile-hidden"
+              src="https://mcc-media.ot-sea-prod.com/media/wysiwyg/lp/theonitsuka/onitsuka-tiger-onitsuka-white-header-1600x200-27072021-1.jpg"
+              alt="" title="" data-element="desktop_image" data-pb-style="K8YAKPY"></figure>
+          <div class="sub-title-block" data-content-type="text" data-appearance="default" data-element="main"
+            data-pb-style="R68MJWJ">
+            <p style="text-align: center;"><span style="font-size: 16px;"><strong>&nbsp;Made in Japan with pride, THE
+                  ONITSUKA™ collection is the new, redefined luxury. Every detail has been </strong></span><strong
+                style="font-size: 16px;">meticulously engineered for both form and function. We seamlessly combine
+                timeless designs with </strong><strong style="font-size: 16px;">traditional craftsmanship, comfort
+                technology and Japanese precision. We believe in practical </strong><strong
+                style="font-size: 16px;">enjoyment over extravagant opulence.</strong></p>
+          </div>
+          <div class="description-text" data-content-type="text" data-appearance="default" data-element="main">
+            <p style="text-align: center;"><strong><span style="font-size: 16px;">THE ONITSUKA™ footwear is
+                  characterized by unique hybrid designs, juxtaposing the sophistication of dress shoes and sneakers,
+                  pursuing light comfort. Introducing story behind Japanese craftsmanship hidden in each
+                  pair.</span></strong></p>
+          </div>
+          <div data-content-type="buttons" data-appearance="stacked" data-same-width="false" data-element="main"
+            data-pb-style="EKIQ89Q">
+            <div class="custom-button-shop-now" data-content-type="button-item" data-appearance="default"
+              data-element="main" data-pb-style="YP232QA"><a class="pagebuilder-button-link" href="p/theonitsuka"
+                target="" data-link-type="default" data-element="link" data-pb-style="K315TTY"><span
+                  data-element="link_text">SHOP NOW</span></a></div>
+            <div class="custom-button-scroll" data-content-type="button-item" data-appearance="default"
+              data-element="main" data-pb-style="F1I3L5E"><a class="pagebuilder-button-link" href="p/theonitsuka"
+                target="" data-link-type="default" data-element="link" data-pb-style="LXFD6RJ"><span
+                  data-element="link_text">SHOP NOW</span></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-content-type="row" data-appearance="full-bleed" data-enable-parallax="0" data-parallax-speed="0.5"
+      data-background-images="{}" data-background-type="image" data-video-loop="true"
+      data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="main"
+      data-pb-style="VSOI10P">
+      <div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12"
+        data-element="main">
+        <div class="pagebuilder-column" data-content-type="column" data-appearance="full-height"
+          data-background-images="{}" data-element="main" data-pb-style="FSV0KK4">
+          <div data-content-type="html" data-appearance="default" data-element="main" data-decoded="true">
+            <div class="cms-content-wrap">
+              <div class="content-wrap flex-between-wrap content-wrap-first">
+                <div class="content-box">
+                  <h2 class="content-label">αGEL Foam</h2>
+                  <div class="content-image flex-between-wrap">
+                    <img src="https://mcc-media.ot-sea-prod.com/media/wysiwyg/lp/theonitsuka/01_GEL_Foam_Pic_1.jpg"
+                      alt="">
+                    <img src="https://mcc-media.ot-sea-prod.com/media/wysiwyg/lp/theonitsuka/01_GEL_Foam_Pic_2.jpg"
+                      alt="">
+                  </div>
+                  <p class="content-desc">The “red line” - decent leather shoes with a discernible accent. The
+                    representation of the line is in THE ONITSUKA’s classical, iconic red color, with the cushioning
+                    “αGEL Foam”, light and comfy.
+                    <br>※αGEL Foam is a trademark of Taica Corporation, registered in Japan and / or other countries.
+                  </p>
+                </div>
+                <div class="content-box">
+                  <h2 class="content-label">JAPANESE LEATHER</h2>
+                  <div class="content-image flex-between-wrap">
+                    <img
+                      src="https://mcc-media.ot-sea-prod.com/media/wysiwyg/lp/theonitsuka/02_Japanese_Leather_Pic_1.jpg"
+                      alt="">
+                    <img
+                      src="https://mcc-media.ot-sea-prod.com/media/wysiwyg/lp/theonitsuka/02_Japanese_Leather_Pic_2.jpg"
+                      alt="">
+                  </div>
+                  <p class="content-desc">THE ONITSUKA portrays Japanese craftsmanship in every single detail, including
+                    its materials and forms. The glossy upper leather's source, the town of Himeji, is world-renowned
+                    for its leather made from Kobe cattle, and all handmade by painstaking craftsmen. Nicely,
+                    comfortably fits in the shape of your feet.</p>
+                </div>
+              </div>
+              <div class="button-see-more">
+                <button class="see-more-content">See More</button>
+              </div>
+              <div class="content-wrap flex-between-wrap content-wrap-last">
+                <div class="content-box">
+                  <h2 class="content-label">SUPPORT</h2>
+                  <div class="content-image flex-between-wrap">
+                    <img src="https://mcc-media.ot-sea-prod.com/media/wysiwyg/lp/theonitsuka/03_Support_Pic_1.jpg"
+                      alt="">
+                    <img src="https://mcc-media.ot-sea-prod.com/media/wysiwyg/lp/theonitsuka/03_Support_Pic_2.jpg"
+                      alt="">
+                  </div>
+                  <p class="content-desc">Good for your feet, adding almost no burden even after a long walk. Prevention
+                    of arch sinking and wobbling heels by combining the inner sole with materials with different
+                    hardness equipped with a supporting function. Extra softness achieved by embedding sponges in the
+                    tongue and the ankle.
+                  </p>
+                </div>
+                <div class="content-box">
+                  <h2 class="content-label">DURABILITY</h2>
+                  <div class="content-image flex-between-wrap">
+                    <img src="https://mcc-media.ot-sea-prod.com/media/wysiwyg/lp/theonitsuka/04_Durability_Pic_1.jpg"
+                      alt="">
+                    <img src="https://mcc-media.ot-sea-prod.com/media/wysiwyg/lp/theonitsuka/04_Durability_Pic_2.jpg"
+                      alt="">
+                  </div>
+                  <p class="content-desc">Featuring the combination of leather shoes and moderately thick shark soles.
+                    The rubber sponges of the outer sole simply makes it light and durable. The leather shoes perfectly
+                    fit in your walks and your life - it’s easy to wear and to walk. Also, the circle design of the
+                    outer sole is original; it extends excellent grip and support to various scenarios in your daily
+                    life.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
