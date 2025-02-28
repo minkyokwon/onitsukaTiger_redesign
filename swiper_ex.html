@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- normarlize css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- slick -->
+  <script src="./slick/slick.min.js"></script>
+  <link rel="stylesheet" href="./slick/slick.css">
+  <link rel="stylesheet" href="./slick/slick-theme.css">
+  <!-- lenis (Smooth Scroll) -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <!-- AOS 라이브러리 불러오기-->
+  <!-- ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+  <!-- fullPage js -->
+  <script src="./js/lib/jquery.fullpage.js"></script>
+  <link rel="stylesheet" href="./css/jquery.fullpage.css">
+  <!-- 외부 파일 -->
+  <link rel="stylesheet" href="./css/onitsukaCss.css">
+  <link rel="stylesheet" href="./css/fonts.css">
+  <script src="./js/onitsukaScript.js"></script>
+  <!-- 구글 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Aboreto&family=Abril+Fatface&family=Pragati+Narrow:wght@400;700&display=swap"
+    rel="stylesheet">
+  <title>Onitsuka Tiger Korea</title>
+  <style>
+    /*---------- 푸터 섹션 시작 ----------*/
+    .height_full {
+      width: 100%;
+      height: 1500px;
+      background-color: khaki;
+    }
+
+    .top_seller {
+      position: relative;
+      height: 100%;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /*---------- 푸터 섹션 시작 ----------*/
+
+    /*---------- @media (min-width: 1025px) ----------*/
+    @media screen and (min-width: 1025px) {
+      .top_seller h1 {
+        font-size: 68px;
+        color: #212200;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .top_seller .manual_carousel {
+        padding-inline: 48px;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        overflow: hidden;
+      }
+      .top_seller .manual_carousel .slick-track {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+      }
+      .top_seller .manual_carousel .slick-track .slick-slide {
+        margin-right: 8px;
+        flex: 0 0 calc(100% / 4 - 6px);
+        box-sizing: border-box;
+        height: 623px;
+        display: block;
+        width: 100%;
+        background-color: #F8F8F8;
+      }
+
+      .top_seller .manual_carousel .slick-track .slick-slide a {
+        width: 100%;
+        height: 100%;
+      }
+
+      .top_seller .manual_carousel .slick-track .slick-slide a.link {
+        display: flex;
+        flex-direction: column;
+        justify-content: space_between;
+      }
+      .top_seller .manual_carousel .slick-track .slick-slide .product_box {
+        width: 100%;
+        flex-grow: 1;
+        justify-content: center;
+      }
+      .top_seller .manual_carousel .slick-track .slick-slide .product_box img {
+        object-position: center;
+      }
+
+      .top_seller .manual_carousel .slick-track .slick-slide .txt_box {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto;
+        padding: 30px 0px;
+      }
+    }
+  </style>
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="750" data-aos-delay="0">
+  <div class="main-container">
+    <section class="height_full"></section>
+    <section class="top_seller" style="margin: 0 auto 120px auto">
+      <h1>THE NEW ONITSUKA.</h1>
+      <div style="padding-bottom: 48px;">
+        <div class="slick-list manual_carousel">
+          <div class="slick-track draggable">
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span>ONITSUKA TIGER</span></div>
+                  <div><span>TOTE BAG S</span></div>
+                  <div><span>396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
+            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
+            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
+            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
+            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
+            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="gradient_box_reverse"></section>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $('.responsive').slick({
+        dots: true,
+        infinite: false,
+        draggable: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+    });
+  </script>
+</body>
+
+</html>
