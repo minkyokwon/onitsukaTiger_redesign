@@ -80,8 +80,10 @@
       .top_seller .manual_carousel {
         padding-inline: 48px;
         width: 100%;
+        /* left: 10%; */
         margin-right: auto;
         margin-left: auto;
+        /* margin: 0 auto; */
         overflow: hidden;
       }
       .top_seller .manual_carousel .slick-track {
@@ -93,7 +95,7 @@
       }
       .top_seller .manual_carousel .slick-track .slick-slide {
         margin-right: 8px;
-        flex: 0 0 calc(100% / 4 - 6px);
+        width: calc(100% / 4 - 6px);
         box-sizing: border-box;
         height: 623px;
         display: block;
@@ -129,8 +131,24 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        margin: 0 auto;
+        /* margin: 0 auto; */
         padding: 30px 0px;
+        gap: 12px;
+      }
+
+      .top_seller .manual_carousel .slick-track .slick-slide .txt_box .onitsuka_tiger {
+        color: #A2A2A2;
+        font-size: 13px;
+      }
+
+      .top_seller .manual_carousel .slick-track .slick-slide .txt_box .product_name {
+        font-size: 16px;
+        color: #212322;
+      }
+
+      .top_seller .manual_carousel .slick-track .slick-slide .txt_box .product_price {
+        font-size: 13px;
+        color: #666666;
       }
     }
   </style>
@@ -150,18 +168,84 @@
                   <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
                 </div>
                 <div class="txt_box">
-                  <div><span>ONITSUKA TIGER</span></div>
-                  <div><span>TOTE BAG S</span></div>
-                  <div><span>396,000</span></div>
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
                 </div>
               </a>
             </div>
-            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
-            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
-            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
-            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
-            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
-            <div class="slick-slide"><a href=""><img src="" alt=""></a></div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -171,7 +255,7 @@
 
   <script>
     $(document).ready(function () {
-      $('.responsive').slick({
+      $('.slick-track').slick({
         dots: true,
         infinite: false,
         draggable: true,
