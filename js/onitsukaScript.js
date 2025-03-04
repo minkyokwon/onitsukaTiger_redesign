@@ -2,9 +2,7 @@
 console.log("왜 안됨");
 
 // Tnb 닫기
-function closeTnb() {
-  document.getElementsById("Tnb").style.display = "none";
-}
+
 
 // 헤더 이벤트
 document.addEventListener("DOMContentLoaded", function () {

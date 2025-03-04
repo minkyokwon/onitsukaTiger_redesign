@@ -219,6 +219,35 @@
       box-sizing: border-box;
     }
 
+    /*--------------- toTop 버튼 시작 ---------------*/
+    .to-top-btn {
+      position: fixed;
+      right: 30px;
+      bottom: 60px;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* .to-top-btn:hover {
+        background-color: #0056b3;
+      } */
+
+    .to-top-img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /*--------------- toTop 버튼 끝 ---------------*/
+
     /*---------- @media (min-width: 1025px) ----------*/
     @media screen and (min-width: 1025px) {
 
@@ -376,12 +405,15 @@
       #brand .brand_container .brand_wrap ul {
         align-items: center;
         gap: 30px;
+        justify-content: space-between;
+        width: 100%;
       }
 
       #brand .brand_container .brand_wrap ul li {
         width: calc(100%/3);
         height: 620px;
         overflow: hidden !important;
+        aspect-ratio: 460/620;
       }
 
       #brand .brand_container .brand_wrap ul li img {
@@ -389,7 +421,37 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
       }
+
+      /*--------------- toTop 버튼 시작 ---------------*/
+      .to-top-btn {
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+        width: 50px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* .to-top-btn:hover {
+        background-color: #0056b3;
+      } */
+
+      .to-top-img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      /*--------------- toTop 버튼 끝 ---------------*/
     }
   </style>
 </head>
@@ -400,7 +462,7 @@
     <div id="header">
       <div class="headerTnb" id="Tnb">
         <p>지금 바로 멤버십 프로그램을 만나보세요.</p>
-        <div class="close_btn" onclick="closeTnb()"></div>
+        <div class="close_btn" id="close_tnb"></div>
       </div>
       <div class="header_wrap flex">
         <div class="logo_wrap">
@@ -419,7 +481,6 @@
       </div>
     </div>
     <!--------------- 헤더 끝 --------------->
-    <section class="height_full"></section>
     <!--------------- 메인 비주얼 시작 --------------->
     <section class="section_group">
       <!-- section#section-$.section.section-${섹션 $}*5 -->
@@ -510,12 +571,81 @@
       </div>
     </section>
     <!---------- 오니츠카 브랜드 끝 ---------->
+    <!--------------- 이벤트 섹션 시작 --------------->
+    <section class="events_vid_box">
+      <div class="events_vid_container">
+        <video loop autoplay muted playsinline poster="">
+          <source src="/onitsukatiger_images/oni_videos/denivita_wide_45sec_1920_1080.mp4" type="video/mp4">
+          해당 브라우저는 동영상을 지원하지 않습니다.
+        </video>
+        <div class="content">
+          <span>자세히 보기</span>
+        </div>
+      </div>
+    </section>
+    <section id="events_items">
+      <div id="items_wrapper">
+        <div class="product">
+          <a href="#none">
+            <video loop autoplay muted playsinline poster="">
+              <source src="/onitsukatiger_images/oni_tiger_videos/video_card_2.mp4" type="video/mp4">
+              해당 브라우저는 동영상을 지원하지 않습니다.
+            </video>
+          </a>
+        </div>
+        <div class="product card">
+          <a href="https://www.onitsukatiger.com/jp/ja-jp/product/hmr-peak-g-tx/1183a809_001.html" target="_blank">
+            <img src="/onitsukatiger_images/item_detail_pics/hmr_peak_bk_1.jpg" alt="">
+            <div class="product_text_box">
+              <span class="onitsuka_tiger">ONITSUKA TIGER</span>
+              <span class="product_name">HMR PEAK G-TX</span>
+              <!-- <span class="product_price">286,000</span> -->
+            </div>
+            <div class="watch_more show_on_hover">
+              <button class="btn btn_for_more" type="button">
+                <span>자세히 보기</span>
+              </button>
+            </div>
+          </a>
+        </div>
+        <div class="product card">
+          <a href="https://www.onitsukatiger.com/jp/ja-jp/product/hmr-peak-g-tx/1183a809_202.html" target="_blank">
+            <img src="/onitsukatiger_images/item_detail_pics/hmr_peak_br_1.jpg" alt="">
+            <div class="product_text_box">
+              <span class="onitsuka_tiger">ONITSUKA TIGER</span>
+              <span class="product_name">HMR PEAK G-TX</span>
+              <!-- <span class="product_price">286,000</span> -->
+            </div>
+            <div class="watch_more show_on_hover">
+              <button class="btn btn_for_more" type="button">
+                <span>자세히 보기</span>
+              </button>
+            </div>
+          </a>
+        </div>
+        <div class="product card">
+          <a href="https://www.onitsukatiger.com/jp/ja-jp/product/mexico-66-sd/1183b955_020.html" target="_blank">
+            <img src="/onitsukatiger_images/item_detail_pics/mexico_silver_1.jpg" alt="">
+            <div class="product_text_box">
+              <span class="onitsuka_tiger">ONITSUKA TIGER</span>
+              <span class="product_name">MEXICO 66 SD</span>
+              <!-- <span class="product_price">154,000</span> -->
+            </div>
+            <div class="watch_more show_on_hover">
+              <button class="btn btn_for_more" type="button">
+                <span>자세히 보기</span>
+              </button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!--------------- 이벤트 섹션 끝 --------------->
     <section class="gradient_box"></section>
-    <!-- <section class="height_full"></section> -->
     <!-- To Top 버튼 -->
-    <!-- <div id="toTopBtn" class="to-top-btn" role="button" aria-label="Scroll to top">
+    <div id="toTopBtn" class="to-top-btn" role="button" aria-label="Scroll to top">
       <img src="onitsukatiger_images/oni_logo/oni_icon_nobg.png" alt="To Top" class="to-top-img">
-    </div> -->
+    </div>
   </div>
 
   <script>
