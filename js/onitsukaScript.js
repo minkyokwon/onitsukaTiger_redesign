@@ -1,7 +1,23 @@
 // AOS animate
 console.log("왜 안됨");
 
-// lenis smooth scroll
+// Tnb 닫기
+function closeTnb() {
+  document.getElementsById("Tnb").style.display = "none";
+}
+
+// 헤더 이벤트
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".header_wrap");
+
+  header.addEventListener("mouseover", function () {
+    header.classList.add("on"); // 마우스를 올리면 클래스 추가
+  });
+
+  header.addEventListener("mouseout", function () {
+    header.classList.remove("on"); // 마우스를 떼면 클래스 제거
+  });
+});
 
 
 // full Page

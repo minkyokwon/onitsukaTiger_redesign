@@ -30,6 +30,116 @@
     rel="stylesheet">
   <title>Onitsuka Tiger Korea</title>
   <style>
+    .sr_only,
+    caption {
+      position: absolute;
+      top: -9999px;
+      font-size: 0;
+      height: 0;
+    }
+
+    /*--------------- 헤더 (모바일 메인) ---------------*/
+    #header {
+      position: fixed;
+      width: 100%;
+      background: transparent;
+      z-index: 200;
+      margin-left: auto;
+      margin-right: auto;
+      transition: all 0.5s;
+    }
+
+    #header .headerTnb {
+      opacity: 0;
+      position: relative;
+      background-color: #212322;
+    }
+
+    #header .headerTnb .close_btn {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      float: right;
+      background: url(./onitsukatiger_images/oni_logo/close_white.svg) no-repeat 0 0 / 100% 100%;
+      cursor: pointer;
+    }
+
+    #header .header_wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: transparent;
+      margin: 0 auto;
+      position: relative;
+      padding: 0 2%;
+      height: 126px;
+      box-sizing: border-box;
+      transition: all 0.5s;
+    }
+
+    #header .header_wrap .logo_wrap .logo {
+      display: block;
+      width: 78px;
+      height: 49px;
+      background: url(./onitsukatiger_images/oni_logo/new-logo-white.png) no-repeat 0 0 / 100% 100%;
+    }
+
+    #header .header_wrap .menu_wrap {
+      height: 100%;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    #header .header_wrap .menu_wrap ul {
+      gap: 30px;
+    }
+
+    #header .header_wrap .menu_wrap ul li a {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+
+    #header .header_wrap .menu_wrap ul li .search {
+      background: url(./onitsukatiger_images/oni_logo/search_white.svg) no-repeat 0 0 / 100% 100%;
+    }
+
+    #header .header_wrap .menu_wrap ul li .user {
+      background: url(./onitsukatiger_images/oni_logo/user_white.svg) no-repeat 0 0 / 100% 100%;
+    }
+
+    #header .header_wrap .menu_wrap ul li .burger {
+      background: url(./onitsukatiger_images/oni_logo/menu_white.svg) no-repeat 0 0 / 100% 100%;
+    }
+
+    /*--------------- 헤더 호버 시 ---------------*/
+    #header .header_wrap.on {
+      background-color: #fff;
+    }
+
+    #header .header_wrap.on .logo_wrap .logo {
+      display: block;
+      width: 78px;
+      height: 49px;
+      background: url(./onitsukatiger_images/oni_logo/Onitsuka_Tiger_logo.png) no-repeat 0 0 / 100% 100%;
+    }
+
+    #header .header_wrap.on .menu_wrap ul li .search {
+      background: url(./onitsukatiger_images/oni_logo/search.svg) no-repeat 0 0 / 100% 100%;
+    }
+
+    #header .header_wrap.on .menu_wrap ul li .user {
+      background: url(./onitsukatiger_images/oni_logo/user.svg) no-repeat 0 0 / 100% 100%;
+    }
+
+    #header .header_wrap.on .menu_wrap ul li .burger {
+      background: url(./onitsukatiger_images/oni_logo/menu.svg) no-repeat 0 0 / 100% 100%;
+    }
+
+
     /*---------- 메인 비주얼(풀페이지) 시작 ----------*/
     .section_group {
       -ms-overflow-style: none;
@@ -111,6 +221,18 @@
 
     /*---------- @media (min-width: 1025px) ----------*/
     @media screen and (min-width: 1025px) {
+
+      /*---------- 헤더 ----------*/
+      #header .headerTnb {
+        opacity: 1;
+        /* padding: 0 10%; */
+      }
+
+      #header .header_wrap {
+        padding: 0 110px;
+      }
+
+
       .section_group {
         /* overflow-y: scroll; */
         overflow: auto;
@@ -274,6 +396,29 @@
 
 <body data-aos-easing="ease" data-aos-duration="750" data-aos-delay="0">
   <div class="main-container">
+    <!--------------- 헤더 시작 --------------->
+    <div id="header">
+      <div class="headerTnb" id="Tnb">
+        <p>지금 바로 멤버십 프로그램을 만나보세요.</p>
+        <div class="close_btn" onclick="closeTnb()"></div>
+      </div>
+      <div class="header_wrap flex">
+        <div class="logo_wrap">
+          <a href="#none" class="flex logo"></a>
+        </div>
+        <div class="grow_box" style="flex-grow: 1;"></div>
+        <div class="menu_wrap flex">
+          <ul class="flex">
+            <li class="list">
+              <a href="#none" class="search"></a>
+            </li>
+            <li class="list"><a href="#none" class="user"></a></li>
+            <li class="list"><a href="#none" class="burger"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--------------- 헤더 끝 --------------->
     <section class="height_full"></section>
     <!--------------- 메인 비주얼 시작 --------------->
     <section class="section_group">
@@ -324,7 +469,7 @@
         </div>
       </div>
     </section>
-    <!-- 메인 비주얼 끝 -->
+    <!--------------- 메인 비주얼 끝 --------------->
     <!---------- 오니츠카 브랜드 시작 ---------->
     <section id="brand">
       <div class="pagebuilder-column-group flex column">
@@ -368,12 +513,13 @@
     <section class="gradient_box"></section>
     <!-- <section class="height_full"></section> -->
     <!-- To Top 버튼 -->
-    <div id="toTopBtn" class="to-top-btn" role="button" aria-label="Scroll to top">
+    <!-- <div id="toTopBtn" class="to-top-btn" role="button" aria-label="Scroll to top">
       <img src="onitsukatiger_images/oni_logo/oni_icon_nobg.png" alt="To Top" class="to-top-img">
-    </div>
+    </div> -->
   </div>
 
   <script>
+
     $(document).ready(function () {
 
       // Top 버튼 특정 스크롤높이에서만 보이기 / 숨기기
@@ -392,6 +538,7 @@
       });
 
     });
+
   </script>
 </body>
 
