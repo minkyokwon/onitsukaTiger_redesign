@@ -31,6 +31,10 @@ body {
   font-family: 'Pragati_Narrow';
   font-weight: 400;
   font-style: normal;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
 }
 
 .flex {
@@ -63,6 +67,10 @@ body {
 .txt_grey {
   color: #A4A4A4;
   font-size: 12px;
+}
+
+.scale {
+  transform: scale(0.8);
 }
 
 
@@ -109,8 +117,16 @@ button,
   text-transform: uppercase;
 }
 
+.sr_only,
+caption {
+  position: absolute;
+  top: -9999px;
+  font-size: 0;
+  height: 0;
+}
 
 
+/*--------------- 커스텀 시작 ---------------*/
 /*--------------- 헤더 (모바일 메인) ---------------*/
 #header {
   position: fixed;
@@ -161,6 +177,7 @@ button,
 
 #header .header_wrap .logo_wrap .logo {
   display: block;
+  align-items: center;
   width: 39px;
   height: 24px;
   background: url(./onitsukatiger_images/oni_logo/new-logo-white.png) no-repeat 0 0 / 100% 100%;
@@ -218,14 +235,152 @@ button,
   background: url(./onitsukatiger_images/oni_logo/menu.svg) no-repeat 0 0 / 100% 100%;
 }
 
-/* #main .main_visual img {
-  width: 100%;
-  height: 1080px;
-  background-repeat: no-repeat;
-  object-fit: cover;
-} */
+/*--------------- 메인 비주얼 섹션 시작 ---------------*/
+.section_group {
+  /* overflow-y: scroll; */
+  overflow: auto;
+  height: 100vh;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y proximity; */
+}
 
-/*-------------------- 신제품 섹션 시작 --------------------*/
+.section_group>.section {
+  height: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+}
+
+.section_group {
+  -ms-overflow-style: none;
+}
+
+.section_group::-webkit-scrollbar {
+  display: none;
+}
+
+.section_group .section {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.section_group .section img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.section_group #section1 {
+  background: url(/onitsukatiger_images/section_1_pic.jpg) no-repeat 0 0 / 50% 50%;
+  background-size: cover;
+}
+
+.section_group #section2 {
+  background: url(/onitsukatiger_images/section_2_pic.jpeg) no-repeat top;
+  background-size: cover;
+}
+
+.section_group #section3 {
+  background: url(/onitsukatiger_images/section_3_pic.png) no-repeat top;
+  background-size: cover;
+}
+
+.section_group .section .tit_box__inner {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: end;
+  box-sizing: border-box;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(153, 153, 153, 0.66) 100%);
+}
+
+.section_group .section .tit_box__inner a {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 0.9;
+}
+
+.section_group .section .tit_box__inner .show {
+  display: block;
+  font-family: 'Aboreto';
+  font-weight: 400;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: -2px;
+  padding-bottom: 5px;
+}
+
+.section_group .section .tit_box__inner .show_tit {
+  display: block;
+  font-size: 66px;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+
+.section_group #section2 .tit_box__inner .show_tit {
+  color: #FEE20E;
+}
+
+.section_group #section3 .tit_box__inner .show_tit {
+  color: #FEE20E;
+}
+
+.section_group .section .tit_box__inner .show_sub {
+  display: block;
+  font-size: 28px;
+  color: #DCDCDC;
+}
+
+.section_group #section3 .tit_box__inner .show_sub {
+  font-size: 20px;
+}
+
+/*--------------- 메인 비주얼 섹션 끝 ---------------*/
+
+/*--------------- 브랜드 소개  섹션 시작 ---------------*/
+#brand .pagebuilder-column {
+  width: 100%;
+  align-self: stretch;
+}
+
+#brand .pagebuilder-column .onitsuka_tm_logo {
+  margin: 0 auto;
+}
+
+#brand .pagebuilder-column .onitsuka_tm_logo>img {
+  display: block;
+  margin: 0 auto;
+}
+
+#brand .pagebuilder-column .sub-title {
+  width: 87%;
+  margin: 20px auto 45px;
+}
+
+#brand .pagebuilder-column .description-text {
+  max-width: 1240px;
+  margin: 0 auto 2.2rem;
+  /* margin: 0 auto 3.2rem; */
+  padding: 0 15px;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/*--------------- 브랜드 소개 섹션 끝 ---------------*/
+
+/*--------------- NEW ONITSUKA 시작 ---------------*/
+.top_seller {
+  position: relative;
+  height: 100%;
+}
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -247,58 +402,179 @@ button,
   object-fit: cover;
 }
 
-/*---------- @media (min-width: 1025px) ----------*/
-@media screen and (min-device-width: 1025px) {
-  .new_onitsuka_section {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-  }
 
-  .new_onitsuka_section .title h2 {
-    font-family: 'PragatiNarrow';
-    font-weight: 700;
-    font-size: 128px;
-    letter-spacing: -7px;
-    line-height: 0.9;
-    display: block;
-    padding: 30px 0;
-  }
-
-  .new_onitsuka_section .title a {
-    font-size: 24px;
-    font-weight: 600;
-  }
-
-  .product_section {
-    position: relative;
-    margin: 217px auto 0;
-    padding: 0 20px;
-    width: 1440px;
-  }
-
-  .product_section .new_onitsuka_section .new_products {
-    width: calc(100% - 800px);
-  }
-
-  /*--------------- introduction part 시작 ---------------*/
-  .intro_wrap {
-    outline: 1px solid red;
-    text-align: center;
-  }
-
-  .intro_wrap .intro_title {
-    padding: 30px 0;
-  }
-
-  .intro_wrap .intro_title img {
-    width: 500px;
-  }
-
-  /*--------------- introduction part 끝 ---------------*/
+/*--------------- NEW ONITSUKA 시작 ---------------*/
+.top_seller .new_onitsuka {
+  width: 800px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/*-------------------- 신제품 섹션 시작 --------------------*/
+.top_seller .new_onitsuka h1 {
+  font-family: 'Pragati_Narrow';
+  font-size: 68px;
+  color: #212200;
+  font-weight: 700;
+  /* margin-bottom: 20px; */
+  margin: 0;
+  letter-spacing: -4px;
+}
+
+.top_seller .new_onitsuka .for_more {
+  margin-top: auto;
+}
+
+.top_seller .new_onitsuka .for_more a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.top_seller .new_onitsuka .for_more span {
+  font-family: 'Pragati_Narrow';
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  padding-right: 2rem;
+}
+
+.top_seller .new_onitsuka .for_more .arrow_box {
+  position: relative;
+  width: 50%;
+}
+
+.top_seller .new_onitsuka .for_more .arrow_box .arrow_top,
+.arrow_bottom {
+  position: absolute;
+  height: 2px;
+  background-color: #212322;
+  transition: all 0.4s;
+}
+
+.top_seller .new_onitsuka .for_more .arrow_box .arrow_bottom {
+  bottom: 10%;
+  width: 40%;
+}
+
+.top_seller .new_onitsuka .for_more .arrow_box .arrow_top {
+  width: 10%;
+  right: 59%;
+  bottom: 42%;
+  transform: rotate(40deg);
+}
+
+.top_seller .new_onitsuka:hover .for_more .arrow_bottom {
+  width: 70%;
+}
+
+.top_seller .new_onitsuka:hover .for_more .arrow_top {
+  right: 29%;
+}
+
+.top_seller .manual_carousel {
+  /* padding-inline: 48px; */
+  width: 100%;
+  /* left: 10%; */
+  margin-right: auto;
+  margin-left: auto;
+  /* margin: 0 auto; */
+  overflow: hidden;
+  justify-content: center;
+}
+
+.top_seller .manual_carousel .slick-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide {
+  margin-right: 8px;
+  width: calc(100% / 4 - 6px);
+  box-sizing: border-box;
+  height: 623px;
+  display: block;
+  width: 100%;
+  background-color: #F8F8F8;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide a {
+  width: 100%;
+  height: 100%;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide a.link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space_between;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide .product_box {
+  width: 100%;
+  flex-grow: 1;
+  justify-content: center;
+  position: relative;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide .product_box img {
+  position: absolute;
+  object-position: center;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: opacity 1s;
+  display: block;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide .product_box .hover {
+  position: absolute;
+  object-position: center;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide:hover .product_box img {
+  display: none;
+  opacity: 0;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide:hover .product_box .hover {
+  display: block;
+  opacity: 1;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide .txt_box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* margin: 0 auto; */
+  padding: 30px 0px;
+  gap: 12px;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide .txt_box .onitsuka_tiger {
+  color: #A2A2A2;
+  font-size: 13px;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide .txt_box .product_name {
+  font-size: 16px;
+  color: #212322;
+}
+
+.top_seller .manual_carousel .slick-track .slick-slide .txt_box .product_price {
+  font-size: 13px;
+  color: #666666;
+}
 
 /*--------------- 이벤트 섹션 시작 ---------------*/
 .events_vid_box {
@@ -357,9 +633,62 @@ button,
 }
 
 /*--------------- 이벤트 섹션 끝 ---------------*/
+
+/*=============== 푸터 섹션 시작 ===============*/
+.main-container #footer {
+  /* -ms-overflow-style: none; */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #010307;
+  color: #fff;
+  text-align: center;
+}
+
+.main-container #footer::webkit-scrollbar {
+  display: none;
+}
+
+/* .main-container #footer {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+} */
+
+#footer .footer_visual img {
+  pointer-events: none;
+}
+/* #footer .footer_detail {
+  display: flex;
+  flex-grow: 1;
+  height: calc(100vh - 488px);
+  flex-direction: column;
+  justify-content: space-around;
+}
+#footer .footer_detail .detail_upper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+#footer .footer_detail .detail_upper ul {
+  gap: 2rem;
+}
+#footer .footer_detail .detail_upper .detail_logo_box ul {
+  align-items: center;
+}
+#footer .footer_detail .detail_upper .detail_logo_box img {
+  width: 70px;
+}
+#footer .footer_detail .detail_lower .company {
+  padding-bottom: 1rem;
+} */
+/*=============== 푸터 섹션 끝 ===============*/
 /*--------------- toTop 버튼 시작 ---------------*/
 .to-top-btn {
   position: fixed;
+  z-index: 999;
   right: 30px;
   bottom: 40px;
   width: 40px;
@@ -386,24 +715,212 @@ button,
 
 /*--------------- toTop 버튼 끝 ---------------*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*--------------- @media (min-width: 1025px) ---------------*/
+/*================= @media (min-width: 1025px) ================*/
 @media screen and (min-width: 1025px) {
+
+  /*=============== 헤더 시작 ===============*/
+  #header .headerTnb {
+    opacity: 1;
+    /* padding: 0 10%; */
+  }
+
+  #header .header_wrap {
+    height: 126px;
+    padding: 0 110px;
+  }
+
+  #header .header_wrap .logo_wrap .logo {
+    display: block;
+    width: 78px;
+    height: 49px;
+    background: url(./onitsukatiger_images/oni_logo/new-logo-white.png) no-repeat 0 0 / 100% 100%;
+  }
+
+  #header .header_wrap .menu_wrap {
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  #header .header_wrap .menu_wrap ul {
+    gap: 30px;
+  }
+
+  #header .header_wrap .menu_wrap ul li a {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+  /*=============== 헤더 끝 ===============*/
+
+  /*=============== 브랜드 소개 섹션 시작 ===============*/
+  .main-container #brand {
+    padding-top: 96px;
+  }
+
+  #brand .pagebuilder-column .sub-title {
+    width: 87%;
+    margin: 20px auto 45px;
+  }
+
+  #brand .brand_container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  #brand .brand_container .brand_wrap {
+    max-width: 1440px;
+    display: flex;
+    margin: 0 auto;
+    padding: 144px 0;
+  }
+
+  #brand .brand_container .brand_wrap ul {
+    align-items: center;
+    gap: 30px;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  #brand .brand_container .brand_wrap ul li {
+    width: calc(100%/3);
+    height: 620px;
+    overflow: hidden !important;
+    aspect-ratio: 460/620;
+  }
+
+  #brand .brand_container .brand_wrap ul li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /*=============== 브랜드 소개 섹션 끝 ===============*/
+
+  /*--------------- 메인 비주얼 섹션 시작 ---------------*/
+  .section_group {
+    overflow: auto;
+    height: 100vh;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
+
+  .section_group>.section {
+    min-height: 100vh;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+  }
+
+  .section_group .section .tit_box__inner {
+    height: 520px;
+    padding-bottom: 6%;
+  }
+
+  .section_group .section .tit_box__inner a {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 0.9;
+  }
+
+  .section_group .section .tit_box__inner .show {
+    display: block;
+    font-family: 'Aboreto';
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: -2px;
+    padding-bottom: 5px;
+  }
+
+  .section_group .section .tit_box__inner .show_tit {
+    display: block;
+    font-size: 66px;
+    color: #fff;
+  }
+
+  .section_group #section2 .tit_box__inner .show_tit {
+    color: #FEE20E;
+  }
+
+  .section_group #section3 .tit_box__inner .show_tit {
+    color: #FEE20E;
+  }
+
+  .section_group .section .tit_box__inner .show_sub {
+    display: block;
+    font-size: 28px;
+    color: #DCDCDC;
+  }
+
+  .section_group #section3 .tit_box__inner .show_sub {
+    font-size: 20px;
+  }
+
+  /*--------------- 스크롤 다운 애니메이션 시작 ---------------*/
+  .section_group .section .scroll_down {
+    position: absolute;
+    z-index: 100;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%)
+  }
+
+  .section_group .section .scroll_mouse {
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    width: 6px;
+    height: 24px;
+    border-radius: 20px;
+  }
+
+  .section_group .section .scroll_wheel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    animation: scrollWheel 2.5s infinite;
+  }
+
+  @keyframes scrollWheel {
+    0% {
+      top: 0;
+      opcaity: 0;
+    }
+
+    15% {
+      top: 0;
+      opacity: 1;
+    }
+
+    30% {
+      top: 0;
+      opacity: 1;
+    }
+
+    45% {
+      top: 18px;
+      opcaity: 1;
+    }
+
+    100% {
+      top: 18px;
+      opacity: 0;
+    }
+  }
+
+  /*--------------- 스크롤 다운 애니메이션 끝 ---------------*/
+  /*--------------- 메인 비주얼 섹션 끝 ---------------*/
+
+  /*--------------- 이벤트 비디오 섹션 시작 ---------------*/
   .events_vid_box {
     position: relative;
     width: 100%;
@@ -450,6 +967,8 @@ button,
     display: block;
     padding: 14px 20px 11px;
   }
+
+  /*--------------- 이벤트 비디오 섹션 끝 ---------------*/
 
   /*--------------- 이벤트 아이템 리스트 시작 ---------------*/
   #events_items {
@@ -604,8 +1123,103 @@ button,
     opacity: 0;
   }
 
-  /*--------------- 이벤트 아이템 리스트 끝 ---------------*/
-  /*--------------- toTop 버튼 시작 ---------------*/
+  /*=============== 이벤트 아이템 리스트 끝 ===============*/
+
+/*=============== 푸터 섹션 시작 ===============*/
+#footer {
+  /* overflow: auto; */
+  display: flex;
+  flex-direction: column;
+}
+
+#footer br {
+  display: none;
+}
+
+#footer .footer_visual {
+  flex-grow: 1;
+  width: 100%;
+  height: auto;
+  /* height: 600px; */
+  position: relative;
+  box-sizing: border-box;
+  /* scroll-snap-align: start; */
+}
+
+#footer .footer_visual .visual_image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-55%);
+}
+
+#footer .footer_visual .visual_image img {
+  display: block;
+}
+
+
+#footer .footer_detail {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+#footer .footer_detail .detail_upper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 4rem;
+}
+
+#footer .footer_detail .detail_upper .detail_list_box {
+  width: 50%;
+  height: auto;
+  margin-top: 1.2rem;
+}
+
+#footer .footer_detail .detail_upper .detail_list_box ul {
+  gap: 2.5rem;
+  font-weight: 700;
+  height: 100%;
+  align-items: center;
+}
+
+#footer .footer_detail .detail_upper .detail_logo_box {
+  width: 50%;
+  height: auto;
+  justify-content: end;
+}
+
+#footer .footer_detail .detail_upper .detail_logo_box ul {
+  gap: 2.5rem;
+  float: right;
+}
+
+#footer .footer_detail .detail_upper .detail_logo_box li img {
+  display: block;
+  width: auto;
+  height: 70px;
+}
+
+#footer .footer_detail .detail_lower {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 2.5rem;
+  padding-bottom: 40px;
+}
+
+#footer .footer_detail .detail_lower .company {
+  /* font-family: 'Esamanru'; */
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -1px;
+}
+/*=============== 푸터 섹션 끝 ===============*/
+
+  /*=============== toTop 버튼 시작 ===============*/
   .to-top-btn {
     right: 50px;
     bottom: 50px;
@@ -624,337 +1238,5 @@ button,
     object-position: center;
   }
 
-  .main-container .height_full {
-    width: 100%;
-    height: 2000px;
-    background-color: khaki;
-  }
-
-  /*--------------- toTop 버튼 끝 ---------------*/
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*--------------- from THE ONITSUKA page ---------------*/
-.custom-button-shop-now a {
-  background: #000 !important;
-  color: #fff !important;
-}
-
-.custom-button-shop-now a:hover {
-  background: #fff !important;
-  color: #000 !important;
-}
-
-.custom-button-scroll {
-  display: none !important;
-}
-
-.custom-button-scroll.fixed {
-  display: block !important;
-  position: fixed;
-  top: 120px;
-  z-index: 1000;
-  right: calc((100vw - 1240px) / 2);
-}
-
-.custom-button-scroll.fixed a {
-  background: #000 !important;
-  color: #fff !important;
-  border-radius: 50%;
-  height: 90px;
-  width: 90px;
-  display: flex;
-  align-items: center;
-  font-size: 21px;
-  vertical-align: middle;
-  text-align: center;
-  border: 2px solid #fff;
-  padding: 0;
-}
-
-.custom-button-scroll.fixed a:hover {
-  background: #fff !important;
-  color: #000 !important;
-}
-
-.page-main .category-view {
-  text-align: inherit;
-}
-
-.onitsuka-logo {
-  margin: 0 auto;
-}
-
-.flexbox-image {
-  filter: brightness(1);
-}
-
-.flexbox-image:hover {
-  transition: all .3s ease-in-out;
-  filter: brightness(0.2);
-}
-
-.block-banner-image img {
-  width: 100%;
-}
-
-.sub-title-block {
-  width: 87%;
-  margin: 20px auto 45px !important;
-  font-weight: normal;
-}
-
-.cms-page-view .page-main .columns {
-  padding-top: 0;
-}
-
-a.pagebuilder-button-link:active {
-  color: #7f0019;
-  text-decoration: none;
-}
-
-.copy-block p {
-  margin-bottom: 15px;
-  margin-top: 5px;
-}
-
-.button-shop-now {
-  margin-bottom: 50px;
-}
-
-.onitsuka-logo img.pagebuilder-mobile-only {
-  margin: 0 auto;
-  display: block;
-}
-
-.cms-content-wrap .see-more-content {
-  font-family: 'Matter , sans-serif';
-  line-height: 1.42857143;
-  margin: 0 10px 10px 0;
-  padding: 14px 17px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.cms-content-wrap {
-  box-sizing: border-box;
-  max-width: 1240px;
-  margin: 0 auto;
-  font-family: 'Matter , sans-serif';
-}
-
-.description-text {
-  max-width: 1240px;
-  margin: 0 auto 3.2rem;
-  padding: 0 15px;
-  width: 100%;
-  text-align: left;
-  box-sizing: border-box;
-}
-
-.cms-content-wrap .content-label {
-  padding: 1.6rem 15px 3.2rem;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  font-family: 'Matter , sans-serif';
-}
-
-.cms-content-wrap .content-box {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin-bottom: 3.2rem;
-  padding-bottom: 3.2rem;
-}
-
-.cms-content-wrap .content-desc {
-  margin: 0;
-  font-size: 16px;
-  padding: 0 15px;
-}
-
-.cms-content-wrap .content-image img {
-  padding: 0 15px;
-  width: 50%;
-  box-sizing: border-box;
-  margin-bottom: 2.4rem;
-  height: initial;
-}
-
-.flex-between-wrap {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.button-see-more {
-  display: none;
-  justify-content: center;
-  margin: 50px 0;
-  font-size: 16px;
-  font-weight: normal;
-  font-family: 'Matter', 'Matter , sans-serif';
-}
-
-@media only screen and (max-width: 768px) {
-  .custom-button-scroll.fixed {
-    top: 19vw;
-    right: 0;
-  }
-
-  .custom-button-scroll.fixed a {
-    height: 70px;
-    width: 70px;
-    font-size: 15px;
-  }
-
-  .cms-content-wrap .content-box {
-    width: 100%;
-  }
-
-  .cms-content-wrap .content-image {
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .cms-content-wrap .content-image img {
-    width: auto;
-    max-width: 80%;
-    margin: 0 auto 2.4rem;
-  }
-
-  .cms-content-wrap .content-box {
-    margin-bottom: 0;
-  }
-
-  .cms-content-wrap .content-wrap-last {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s, overflow 0s;
-  }
-
-  .cms-content-wrap .content-wrap-last.active {
-    max-height: initial;
-    overflow: auto;
-    transition: max-height 0.5s, overflow 0.5s 0.5s;
-  }
-
-  .button-see-more {
-    display: flex;
-  }
-
-  body #sound_btn {
-    width: 106px;
-    height: 24px;
-    top: 10px
-  }
-
-  body #sound_btn .inner {
-    width: 106px;
-    height: 24px;
-    font-size: 12px;
-    padding-top: 5px;
-    padding-left: 26px
-  }
-
-  body #sound_btn .icon {
-    width: 7.5px;
-    height: 12px;
-    left: 11px;
-    top: 6px
-  }
-}
-
-.page-wrapper-fullwidth .page-wrapper .page-main video {
-  width: 100%;
-}
-
-div[data-content-type="html"] {
-  position: relative;
-}
-
-body #sound_btn {
-  position: absolute;
-  right: 0;
-  top: 20px;
-  width: 124px;
-  height: 28px;
-  cursor: pointer;
-  border: #fff 1px solid;
-  border-right: none;
-  box-sizing: border-box;
-  background-color: #000;
-  color: #fff;
-  transition: color 0.3s linear, background-color 0.3s linear;
-  font-family: 'Matter , sans-serif';
-  font-weight: 600;
-  z-index: 3
-}
-
-body #sound_btn .inner {
-  position: absolute;
-  width: 124px;
-  height: 28px;
-  left: 0;
-  top: 0;
-  font-size: 14px;
-  padding-top: 5px;
-  padding-left: 26px;
-  box-sizing: border-box;
-  line-height: 1;
-  opacity: 0
-}
-
-body #sound_btn .icon {
-  position: absolute;
-  display: block;
-  width: 9px;
-  height: 14px;
-  left: 11px;
-  top: 5px;
-  opacity: 0;
-  transition: opacity 0.3s linear
-}
-
-body #sound_btn .inner.on,
-body #sound_btn .icon.wh {
-  opacity: 1
-}
-
-@media screen and (min-width: 769px) {
-  body #sound_btn:hover {
-    background-color: #fff;
-    color: #000
-  }
-
-  body #sound_btn:hover .icon.wh {
-    opacity: 0
-  }
-
-  body #sound_btn:hover .icon.bk {
-    opacity: 1
-  }
-}
-
-body #sound_btn.on .inner.on {
-  opacity: 0
-}
-
-body #sound_btn.on .inner.off {
-  opacity: 1
+  /*=============== toTop 버튼 끝 ===============*/
 }

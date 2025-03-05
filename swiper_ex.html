@@ -34,7 +34,7 @@
     rel="stylesheet">
   <title>Onitsuka Tiger Korea</title>
   <style>
-    /*---------- 푸터 섹션 시작 ----------*/
+    /*--------------- NEW ONITSUKA 시작 ---------------*/
     .height_full {
       width: 100%;
       height: 1500px;
@@ -71,21 +71,78 @@
 
     /*---------- @media (min-width: 1025px) ----------*/
     @media screen and (min-width: 1025px) {
-      .top_seller h1 {
+      .top_seller .new_onitsuka {
+        width: 800px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .top_seller .new_onitsuka h1 {
+        font-family: 'Pragati_Narrow';
         font-size: 68px;
         color: #212200;
         font-weight: 700;
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
+        margin: 0;
+        letter-spacing: -4px;
       }
+
+      .top_seller .new_onitsuka .for_more {
+        margin-top: auto;
+      }
+
+      .top_seller .new_onitsuka .for_more span {
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -1.2px;
+        padding-right: 2rem;
+      }
+
+      .top_seller .new_onitsuka .for_more .arrow_box {
+        position: relative;
+        width: 50%;        
+      }
+
+      .top_seller .new_onitsuka .for_more .arrow_box .arrow_top, .arrow_bottom {
+        position: absolute;
+        height: 2px;
+        background-color: #212322;
+        transition: all 0.4s;
+      }
+
+      .top_seller .new_onitsuka .for_more .arrow_box .arrow_bottom {
+        bottom: 10%;
+        width: 40%;
+      }
+
+      .top_seller .new_onitsuka .for_more .arrow_box .arrow_top {
+        width: 10%;
+        right: 59%;
+        bottom: 42%;
+        transform: rotate(40deg);
+      }
+
+      .top_seller .new_onitsuka:hover .for_more .arrow_bottom {
+        width: 70%;
+      }
+
+      .top_seller .new_onitsuka:hover .for_more .arrow_top {
+        right: 29%;
+      }
+
       .top_seller .manual_carousel {
-        padding-inline: 48px;
+        /* padding-inline: 48px; */
         width: 100%;
         /* left: 10%; */
         margin-right: auto;
         margin-left: auto;
         /* margin: 0 auto; */
         overflow: hidden;
+        justify-content: center;
       }
+
       .top_seller .manual_carousel .slick-track {
         position: relative;
         width: 100%;
@@ -93,6 +150,7 @@
         z-index: 1;
         display: flex;
       }
+
       .top_seller .manual_carousel .slick-track .slick-slide {
         margin-right: 8px;
         width: calc(100% / 4 - 6px);
@@ -113,18 +171,43 @@
         flex-direction: column;
         justify-content: space_between;
       }
+
       .top_seller .manual_carousel .slick-track .slick-slide .product_box {
         width: 100%;
         flex-grow: 1;
         justify-content: center;
         position: relative;
       }
+
       .top_seller .manual_carousel .slick-track .slick-slide .product_box img {
         position: absolute;
         object-position: center;
         left: 0;
         top: 50%;
         transform: translateY(-50%);
+        opacity: 1;
+        transition: all 1s;
+      }
+
+      .top_seller .manual_carousel .slick-track .slick-slide .product_box .hover {
+        position: absolute;
+        object-position: center;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+        opacity: 0;
+        transition: all 1s;
+      }
+
+      .top_seller .manual_carousel .slick-track .slick-slide:hover .product_box img {
+        display: none;
+        opacity: 0;
+      }
+
+      .top_seller .manual_carousel .slick-track .slick-slide:hover .product_box .hover {
+        display: block;
+        opacity: 1;
       }
 
       .top_seller .manual_carousel .slick-track .slick-slide .txt_box {
@@ -158,14 +241,24 @@
   <div class="main-container">
     <section class="height_full"></section>
     <section class="top_seller" style="margin: 0 auto 120px auto">
-      <h1>THE NEW ONITSUKA.</h1>
-      <div style="padding-bottom: 48px;">
+      <div class="flex" style="padding: 2rem 0 2rem 4rem;">
+        <div class="new_onitsuka">
+          <h1>THE NEW <br> ONITSUKA.</h1>
+          <div class="for_more flex">
+            <span>FOR MORE</span>
+            <div class="arrow_box">
+              <div class="arrow_top"></div>
+              <div class="arrow_bottom"></div>
+            </div>
+          </div>
+        </div>
         <div class="slick-list manual_carousel">
           <div class="slick-track draggable">
             <div class="slick-slide">
               <a href="#none" class="link">
                 <div class="product_box">
-                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                  <img src="./onitsukatiger_images/slide_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/tote_bag_hover.png" alt="tote_bag_s">
                 </div>
                 <div class="txt_box">
                   <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
@@ -177,7 +270,8 @@
             <div class="slick-slide">
               <a href="#none" class="link">
                 <div class="product_box">
-                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                  <img src="./onitsukatiger_images/slide_images/cardigan_nobg.png" alt="tote_bag_s">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/cardigan_hover.png" alt="">
                 </div>
                 <div class="txt_box">
                   <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
@@ -189,7 +283,7 @@
             <div class="slick-slide">
               <a href="#none" class="link">
                 <div class="product_box">
-                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                  <img src="./onitsukatiger_images/slide_images/tote_bag_s_nobg.png" alt="tote_bag_s">
                 </div>
                 <div class="txt_box">
                   <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
@@ -201,7 +295,7 @@
             <div class="slick-slide">
               <a href="#none" class="link">
                 <div class="product_box">
-                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                  <img src="./onitsukatiger_images/slide_images/cardigan_nobg.png" alt="tote_bag_s">
                 </div>
                 <div class="txt_box">
                   <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
@@ -213,7 +307,7 @@
             <div class="slick-slide">
               <a href="#none" class="link">
                 <div class="product_box">
-                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                  <img src="./onitsukatiger_images/slide_images/tote_bag_s_nobg.png" alt="tote_bag_s">
                 </div>
                 <div class="txt_box">
                   <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
@@ -225,7 +319,7 @@
             <div class="slick-slide">
               <a href="#none" class="link">
                 <div class="product_box">
-                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                  <img src="./onitsukatiger_images/slide_images/cardigan_nobg.png" alt="tote_bag_s">
                 </div>
                 <div class="txt_box">
                   <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
@@ -237,7 +331,7 @@
             <div class="slick-slide">
               <a href="#none" class="link">
                 <div class="product_box">
-                  <img src="./onitsukatiger_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                  <img src="./onitsukatiger_images/slide_images/tote_bag_s_nobg.png" alt="tote_bag_s">
                 </div>
                 <div class="txt_box">
                   <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
@@ -257,17 +351,17 @@
     $(document).ready(function () {
       $('.slick-track').slick({
         dots: true,
-        infinite: false,
+        infinite: true,
         draggable: true,
         speed: 300,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 3,
+        slidesToScroll: 1,
         responsive: [
           {
             breakpoint: 1024,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToScroll: 1,
               infinite: true,
               dots: true
             }
@@ -276,7 +370,7 @@
             breakpoint: 600,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2
+              slidesToScroll: 1
             }
           },
           {

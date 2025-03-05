@@ -22,6 +22,11 @@
   <link rel="stylesheet" href="./css/onitsukaCss.css">
   <link rel="stylesheet" href="./css/fonts.css">
   <script src="./js/onitsukaScript.js"></script>
+  <!-- slick -->
+  <script src="./js/lib/new_onitsuka_slick.js"></script>
+  <script src="./slick/slick.min.js"></script>
+  <link rel="stylesheet" href="./slick/slick.css">
+  <link rel="stylesheet" href="./slick/slick-theme.css">
   <!-- 구글 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,14 +35,6 @@
     rel="stylesheet">
   <title>Onitsuka Tiger Korea</title>
   <style>
-    .sr_only,
-    caption {
-      position: absolute;
-      top: -9999px;
-      font-size: 0;
-      height: 0;
-    }
-
     /*--------------- 헤더 (모바일 메인) ---------------*/
     #header {
       position: fixed;
@@ -48,6 +45,11 @@
       margin-right: auto;
       transition: all 0.5s;
     }
+
+    #header.down {
+      transform: translateY(-100%)
+    }
+
 
     #header .headerTnb {
       opacity: 0;
@@ -79,6 +81,10 @@
       height: 64px;
       box-sizing: border-box;
       transition: all 0.5s;
+    }
+
+    #header .header_wrap .logo_wrap {
+      align-items: center;
     }
 
     #header .header_wrap .logo_wrap .logo {
@@ -128,7 +134,7 @@
       background: url(./onitsukatiger_images/oni_logo/Onitsuka_Tiger_logo.png) no-repeat 0 0 / 100% 100%;
     }
 
-    #header .header_wrap.on .menu_wrap ul li .search {  
+    #header .header_wrap.on .menu_wrap ul li .search {
       background: url(./onitsukatiger_images/oni_logo/search.svg) no-repeat 0 0 / 100% 100%;
     }
 
@@ -141,146 +147,10 @@
     }
 
 
-    /*---------- 메인 비주얼(풀페이지) 시작 ----------*/
-    .section_group {
-      /* overflow-y: scroll; */
-      overflow: auto;
-      height: 100vh;
-      scroll-behavior: smooth;
-      scroll-snap-type: y mandatory;
-      /* scroll-snap-type: y proximity; */
-    }
-
-    .section_group>.section {
-      height: 100%;
-      min-height: 100vh;
-      box-sizing: border-box;
-      scroll-snap-align: start;
-    }
-
-    .section_group {
-      -ms-overflow-style: none;
-    }
-
-    .section_group::-webkit-scrollbar {
-      display: none;
-    }
-
-    .section_group .section {
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .section_group .section img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .section_group #section1 {
-      background: url(/onitsukatiger_images/section_1_pic.jpg) no-repeat 0 0 / 50% 50%;
-      background-size: cover;
-    }
-
-    .section_group #section2 {
-      background: url(/onitsukatiger_images/section_2_pic.jpeg) no-repeat top;
-      background-size: cover;
-    }
-
-    .section_group #section3 {
-      background: url(/onitsukatiger_images/section_3_pic.png) no-repeat top;
-      background-size: cover;
-    }
-
-    .section_group .section .tit_box__inner {
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-      height: 200px;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      justify-content: end;
-      box-sizing: border-box;
-      background: rgb(255, 255, 255);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(153, 153, 153, 0.66) 100%);
-    }
-
-    .section_group .section .tit_box__inner a {
-        display: inline-block;
-        vertical-align: top;
-        line-height: 0.9;
-      }
-
-      .section_group .section .tit_box__inner .show {
-        display: block;
-        font-family: 'Aboreto';
-        font-weight: 400;
-        font-size: 20px;
-        color: #fff;
-        letter-spacing: -2px;
-        padding-bottom: 5px;
-      }
-
-      .section_group .section .tit_box__inner .show_tit {
-        display: block;
-        font-size: 66px;
-        color: #fff;
-      }
-
-      .section_group #section2 .tit_box__inner .show_tit {
-        color: #FEE20E;
-      }
-
-      .section_group #section3 .tit_box__inner .show_tit {
-        color: #FEE20E;
-      }
-
-      .section_group .section .tit_box__inner .show_sub {
-        display: block;
-        font-size: 28px;
-        color: #DCDCDC;
-      }
-
-      .section_group #section3 .tit_box__inner .show_sub {
-        font-size: 20px;
-      }
-
-    /*---------- 오니츠카 브랜드 시작 ----------*/
-    #brand .pagebuilder-column {
-      width: 100%;
-      align-self: stretch;
-    }
-
-    #brand .pagebuilder-column .onitsuka_tm_logo {
-      margin: 0 auto;
-    }
-
-    #brand .pagebuilder-column .onitsuka_tm_logo>img {
-      display: block;
-      margin: 0 auto;
-    }
-
-    #brand .pagebuilder-column .sub-title {
-      width: 87%;
-      margin: 20px auto 45px;
-    }
-
-    #brand .pagebuilder-column .description-text {
-      max-width: 1240px;
-      margin: 0 auto 2.2rem;
-      /* margin: 0 auto 3.2rem; */
-      padding: 0 15px;
-      width: 100%;
-      text-align: left;
-      box-sizing: border-box;
-    }
-
-
     /*---------- @media (min-width: 1025px) ----------*/
     @media screen and (min-width: 1025px) {
 
-      /*---------- 헤더 ----------*/
+      /*--------------- 헤더 시작 ---------------*/
       #header .headerTnb {
         opacity: 1;
         /* padding: 0 10%; */
@@ -313,197 +183,6 @@
         width: 24px;
         height: 24px;
       }
-
-
-
-      .section_group {
-        overflow: auto;
-        height: 100vh;
-        scroll-behavior: smooth;
-        scroll-snap-type: y mandatory;
-      }
-
-      .section_group>.section {
-        min-height: 100vh;
-        box-sizing: border-box;
-        scroll-snap-align: start;
-      }
-
-      .section_group .section .tit_box__inner {
-        height: 520px;
-        padding-bottom: 6%;
-      }
-
-      .section_group .section .tit_box__inner a {
-        display: inline-block;
-        vertical-align: top;
-        line-height: 0.9;
-      }
-
-      .section_group .section .tit_box__inner .show {
-        display: block;
-        font-family: 'Aboreto';
-        font-weight: 400;
-        font-size: 20px;
-        color: #fff;
-        letter-spacing: -2px;
-        padding-bottom: 5px;
-      }
-
-      .section_group .section .tit_box__inner .show_tit {
-        display: block;
-        font-size: 66px;
-        color: #fff;
-      }
-
-      .section_group #section2 .tit_box__inner .show_tit {
-        color: #FEE20E;
-      }
-
-      .section_group #section3 .tit_box__inner .show_tit {
-        color: #FEE20E;
-      }
-
-      .section_group .section .tit_box__inner .show_sub {
-        display: block;
-        font-size: 28px;
-        color: #DCDCDC;
-      }
-
-      .section_group #section3 .tit_box__inner .show_sub {
-        font-size: 20px;
-      }
-
-
-      /* 스크롤 다운 애니메이션 시작 */
-      .section_group .section .scroll_down {
-        position: absolute;
-        z-index: 100;
-        bottom: 50px;
-        left: 50%;
-        transform: translateX(-50%)
-      }
-
-      .section_group .section .scroll_mouse {
-        position: relative;
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.2);
-        width: 6px;
-        height: 24px;
-        border-radius: 20px;
-      }
-
-      .section_group .section .scroll_wheel {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 6px;
-        height: 6px;
-        background: #fff;
-        border-radius: 50%;
-        animation: scrollWheel 2.5s infinite;
-      }
-
-      @keyframes scrollWheel {
-        0% {
-          top: 0;
-          opcaity: 0;
-        }
-
-        15% {
-          top: 0;
-          opacity: 1;
-        }
-
-        30% {
-          top: 0;
-          opacity: 1;
-        }
-
-        45% {
-          top: 18px;
-          opcaity: 1;
-        }
-
-        100% {
-          top: 18px;
-          opacity: 0;
-        }
-      }
-
-      .main-container #brand {
-        padding-top: 96px;
-      }
-
-      #brand .pagebuilder-column .sub-title {
-        width: 87%;
-        margin: 20px auto 45px;
-      }
-
-      #brand .brand_container {
-        width: 100%;
-        height: auto;
-        display: flex;
-        align-items: center;
-      }
-
-      #brand .brand_container .brand_wrap {
-        max-width: 1440px;
-        display: flex;
-        margin: 0 auto;
-        padding: 144px 0;
-      }
-
-      #brand .brand_container .brand_wrap ul {
-        align-items: center;
-        gap: 30px;
-        justify-content: space-between;
-        width: 100%;
-      }
-
-      #brand .brand_container .brand_wrap ul li {
-        width: calc(100%/3);
-        height: 620px;
-        overflow: hidden !important;
-        aspect-ratio: 460/620;
-      }
-
-      #brand .brand_container .brand_wrap ul li img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-
-      /*--------------- toTop 버튼 시작 ---------------*/
-      .to-top-btn {
-        position: fixed;
-        right: 50px;
-        bottom: 50px;
-        width: 50px;
-        height: 50px;
-        background-color: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      /* .to-top-btn:hover {
-        background-color: #0056b3;
-      } */
-
-      .to-top-img {
-        width: 40px;
-        height: 40px;
-        object-fit: cover;
-        object-position: center;
-      }
-
-      /*--------------- toTop 버튼 끝 ---------------*/
     }
   </style>
 </head>
@@ -583,7 +262,7 @@
       </div>
     </section>
     <!--------------- 메인 비주얼 끝 --------------->
-    <!---------- 오니츠카 브랜드 시작 ---------->
+    <!--------------- 오니츠카 브랜드 시작 --------------->
     <section id="brand">
       <div class="pagebuilder-column-group flex column">
         <div class="pagebuilder-column">
@@ -622,7 +301,120 @@
         </div>
       </div>
     </section>
-    <!---------- 오니츠카 브랜드 끝 ---------->
+    <!--------------- 오니츠카 브랜드 끝 --------------->
+    <!--------------- NEW ONITSUKA 시작 --------------->
+    <section class="top_seller" style="margin: 0 auto 120px auto">
+      <div class="flex" style="padding: 2rem 0 2rem 4rem;">
+        <div class="new_onitsuka">
+          <h1>THE NEW <br> ONITSUKA&nbsp;.</h1>
+          <div class="for_more flex">
+            <a href="https://www.onitsukatiger.com/jp/ja-jp/store/all/new-arrival.html" target="_blank">
+              <span>FOR MORE</span>
+              <div class="arrow_box">
+                <div class="arrow_top"></div>
+                <div class="arrow_bottom"></div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="slick-list manual_carousel">
+          <div class="slick-track draggable">
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/tote_bag_hover.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/cardigan_nobg.png" alt="cardigan">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/cardigan_hover.png" alt="cardigan">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">WOMEN'S CARDIGAN</span></div>
+                  <div><span class="product_price">308,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/denim_pants_nobg.png" alt="tote_bag_s">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/denim_pants_hover.png" alt="denim_pants">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">WOMEN'S DENIM PANTS</span></div>
+                  <div><span class="product_price">418,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/blouson_nobg.png" alt="mexico_66_sd_puff">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/blouson_hover.png"
+                    alt="mexico_66_sd_puff">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">BLOUSON</span></div>
+                  <div><span class="product_price">1,320,000</span pan></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/short_sleeved_sweat_top_nobg.png" alt="short_sleeved">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/short_sleeved_sweat_top_hover.png"
+                    alt="short_sleeved">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/cardigan_nobg.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--------------- NEW ONITSUKA 끝 --------------->
     <!--------------- 이벤트 섹션 시작 --------------->
     <section class="events_vid_box">
       <div class="events_vid_container">
@@ -694,6 +486,156 @@
     </section>
     <!--------------- 이벤트 섹션 끝 --------------->
     <section class="gradient_box"></section>
+    <!--------------- TOP SELLER 시작 --------------->
+    <section class="top_seller" style="margin: 0 auto 120px auto">
+      <div class="flex" style="padding: 2rem 0 2rem 4rem;">
+        <div class="new_onitsuka">
+          <h1>THE NEW <br> ONITSUKA&nbsp;.</h1>
+          <div class="for_more flex">
+            <a href="https://www.onitsukatiger.com/jp/ja-jp/store/all/new-arrival.html" target="_blank">
+              <span>FOR MORE</span>
+              <div class="arrow_box">
+                <div class="arrow_top"></div>
+                <div class="arrow_bottom"></div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="slick-list manual_carousel">
+          <div class="slick-track draggable">
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/tote_bag_hover.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/cardigan_nobg.png" alt="cardigan">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/cardigan_hover.png" alt="cardigan">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">WOMEN'S CARDIGAN</span></div>
+                  <div><span class="product_price">308,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/denim_pants_nobg.png" alt="tote_bag_s">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/denim_pants_hover.png" alt="denim_pants">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">WOMEN'S DENIM PANTS</span></div>
+                  <div><span class="product_price">418,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/blouson_nobg.png" alt="mexico_66_sd_puff">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/blouson_hover.png"
+                    alt="mexico_66_sd_puff">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">BLOUSON</span></div>
+                  <div><span class="product_price">1,320,000</span pan></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/short_sleeved_sweat_top_nobg.png" alt="short_sleeved">
+                  <img class="hover" src="./onitsukatiger_images/slide_images/short_sleeved_sweat_top_hover.png"
+                    alt="short_sleeved">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/cardigan_nobg.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+            <div class="slick-slide">
+              <a href="#none" class="link">
+                <div class="product_box">
+                  <img src="./onitsukatiger_images/slide_images/tote_bag_s_nobg.png" alt="tote_bag_s">
+                </div>
+                <div class="txt_box">
+                  <div><span class="onitsuka_tiger">ONITSUKA TIGER</span></div>
+                  <div><span class="product_name">TOTE BAG S</span></div>
+                  <div><span class="product_price">396,000</span></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---------------TOP SELLER 끝 --------------->
+    <!-- <section class="gradient_box_reverse"></section> -->
+    <footer id="footer">
+      <div class="footer_visual">
+        <div class="visual_image">
+          <img src="./onitsukatiger_images/derby_shoes_nobg.png" alt="">
+        </div>
+      </div>
+      <div class="footer_detail">
+        <div class="detail_upper">
+          <div class="detail_list_box">
+            <ul class="flex">
+              <li><a href="#none">FAQ</a></li>
+              <li><a href="#none">POINT PROGRAM</a></li>
+              <li><a href="#none">ABOUT US</a></li>
+            </ul>
+          </div>
+          <div class="detail_logo_box">
+            <ul class="flex">
+              <li><img src="./onitsukatiger_images/oni_logo/oni_icon_nobg.png" alt=""></li>
+              <li><img src="./onitsukatiger_images/oni_logo/typo-logo-white.png" alt=""></li>
+              <li><img src="./onitsukatiger_images/oni_logo/new-logo-white.png" alt=""></li>
+            </ul>
+          </div>
+        </div>
+        <div class="detail_lower">
+          <span class="company txt_grey">
+            (주)아식스코리아ㅣ 대표 : 김원무 ㅣ<br> 주소 : 서울특별시 중구 을지로 5길 16, 삼화타워 14층 ㅣ<br> 대표 전화 : 02-3663-8335 ㅣ 고객 상담실 : (080) 929-3535 /
+            (080) 930-3535
+          </span>
+          <span class="txt_grey">
+            © 2025 Onitsuka Tiger Korea
+            <br>
+            ONITSUKA TIGER IS A REGISTERED TRADEMARK OF ASICS CORPORATION
+          </span>
+        </div>
+      </div>
+    </footer>
     <!-- To Top 버튼 -->
     <div id="toTopBtn" class="to-top-btn" role="button" aria-label="Scroll to top">
       <img src="onitsukatiger_images/oni_logo/oni_icon_nobg.png" alt="To Top" class="to-top-img">

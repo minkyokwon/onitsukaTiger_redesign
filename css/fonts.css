@@ -4,7 +4,7 @@
   font-family: 'Aboreto';
   font-style: normal;
   font-weight: 400;
-  src: local("※"), url(/fonts/Aboreto/Aboreto-Regular.ttf) format("ttf");
+  src: local("※"), url(/fonts/Aboreto/Aboreto-Regular.ttf) format("truetype");
 }
 
 /*---------- Abril_Fatface ----------*/
@@ -12,25 +12,47 @@
   font-family: 'Abril_Fatface';
   font-style: normal;
   font-weight: 400;
-  src: local("※"), url(/fonts/Abril_Fatface/AbrilFatface-Regular.ttf) format("ttf");
+  src: local("※"), url(/fonts/Abril_Fatface/AbrilFatface-Regular.ttf) format("truetype");
 }
 
-/*---------- Pragati-Narrow ----------*/
+/*=============== Pragati-Narrow ===============*/
 @font-face {
   font-family: 'Pragati_Narrow';
   font-style: normal;
   font-weight: 400;
-  src: local('Pragati_Narrow'), url(fonts/PragatiNarrow/PragatiNarrow-Regular.ttf) format("ttf"), url(fonts/PragatiNarrow/PragatiNarrow-Regular.woff) format('woff');
+  src: local('Pragati_Narrow'), url(/fonts/PragatiNarrow/PragatiNarrow-Regular.ttf) format("truetype"), url(/fonts/PragatiNarrow/PragatiNarrow-Regular.woff) format('woff');
 }
 
 @font-face {
   font-family: 'Pragati_Narrow';
   font-style: normal;
   font-weight: 700;
-  src: local('Pragati_Narrow'), url(fonts/PragatiNarrow/PragatiNarrow-Bold.ttf) format("ttf"), url(fonts/PragatiNarrow/PragatiNarrow-Bold.woff) format('woff');
+  src: local('Pragati_Narrow'), url(/fonts/PragatiNarrow/PragatiNarrow-Bold.ttf) format("truetype"), url(/fonts/PragatiNarrow/PragatiNarrow-Bold.woff) format('woff');
 }
 
-/*-------------------- Pretendard --------------------*/
+/*=============== 이사만루체 ===============*/
+@font-face {
+  font-family: 'Esamanru';
+  font-style: normal;
+  font-weight: 300;
+  src: url(/fonts/Esamanru/esamanru\ Light.ttf) format("truetype"), url(/fonts/Esamanru/esamanru\ OTF\ Light.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Esamanru';
+  font-style: normal;
+  font-weight: 500;
+  src: url(/fonts/Esamanru/esamanru\ Medium.ttf) format("truetype"), url(/fonts/Esamanru/esamanru\ OTF\ Medium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Esamanru';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/fonts/Esamanru/esamanru\ Bold.ttf) format("truetype"), url(/fonts/Esamanru/esamanru\ OTF\ Bold.otf) format('opentype');
+}
+
+/*=============== Pretendard ===============*/
 @font-face {
   font-family: 'Pretendard';
   font-weight: 400;
