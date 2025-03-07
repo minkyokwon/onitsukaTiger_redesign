@@ -71,28 +71,28 @@
     }
 
     #header .header_wrap {
-      position: fixed;
+      display: flex;
       top: 0;
       left: 0;
       background: transparent;
       margin: 0 auto;
-      position: relative;
       padding: 0 2rem;
       height: 64px;
       box-sizing: border-box;
       transition: all 0.5s;
-    }
-
-    #header .header_wrap .logo_wrap {
+      justify-content: space-between;
       align-items: center;
     }
 
-    #header .header_wrap .logo_wrap .logo {
-      display: block;
-      width: 39px;
-      height: 24px;
-      background: url(./onitsukatiger_images/oni_logo/new-logo-white.png) no-repeat 0 0 / 100% 100%;
+    #header .header_wrap .logo_wrap {
+      display: flex;
+      align-items: center;
     }
+
+    /* #header .header_wrap .logo_wrap .logo {
+      height: 100%;
+      text-align: center;
+    } */
 
     #header .header_wrap .menu_wrap {
       height: 100%;
@@ -123,15 +123,10 @@
     }
 
     /*--------------- 헤더 호버 시 ---------------*/
-    #header .header_wrap.on {
-      background-color: #fff;
-    }
-
     #header .header_wrap.on .logo_wrap .logo {
-      display: block;
       width: 78px;
       height: 49px;
-      background: url(./onitsukatiger_images/oni_logo/Onitsuka_Tiger_logo.png) no-repeat 0 0 / 100% 100%;
+      background: url(./onitsukatiger_images/oni_logo/new-logo-black.png) no-repeat 0 0 / 100% 100%;
     }
 
     #header .header_wrap.on .menu_wrap ul li .search {
@@ -162,7 +157,6 @@
       }
 
       #header .header_wrap .logo_wrap .logo {
-        display: block;
         width: 78px;
         height: 49px;
         background: url(./onitsukatiger_images/oni_logo/new-logo-white.png) no-repeat 0 0 / 100% 100%;
@@ -196,9 +190,11 @@
         <div class="close_btn" id="close_tnb"></div>
       </div>
       <div class="header_wrap flex">
-        <div class="logo_wrap">
-          <a href="#none" class="flex logo"></a>
-        </div>
+        <h1 class="logo_wrap">
+          <a href="#none" class="flex logo">
+            <!-- <img class="logo_white" src="./onitsukatiger_images/oni_logo/new-logo-white.png" alt="logo"> -->
+          </a>
+        </h1>
         <div class="grow_box" style="flex-grow: 1;"></div>
         <div class="menu_wrap flex">
           <ul class="flex">
@@ -222,7 +218,7 @@
           <a href="#none">
             <span class="show">PRE COLLECTION</span>
             <strong class="show_tit abril-fatface-regular">DENIVITA</strong>
-            <span class="show_sub abril-fatface-regular">COLOR YOUR VITA</span>
+            <span class="show_sub">COLOR YOUR VITA</span>
           </a>
         </div>
         <div class="scroll_down">
@@ -303,7 +299,7 @@
     </section>
     <!--------------- 오니츠카 브랜드 끝 --------------->
     <!--------------- NEW ONITSUKA 시작 --------------->
-    <section class="top_seller" style="margin: 0 auto 120px auto">
+    <section class="brand_new" style="margin: 0 auto 120px auto">
       <div class="flex" style="padding: 2rem 0 2rem 4rem;">
         <div class="new_onitsuka">
           <h1>THE NEW <br> ONITSUKA&nbsp;.</h1>
@@ -489,9 +485,9 @@
     <!--------------- TOP SELLER 시작 --------------->
     <section class="top_seller" style="margin: 0 auto 120px auto">
       <div class="flex" style="padding: 2rem 0 2rem 4rem;">
-        <div class="new_onitsuka">
-          <h1>THE NEW <br> ONITSUKA&nbsp;.</h1>
-          <div class="for_more flex">
+        <div class="what_is_hot">
+          <h1>WHAT IS HOT.</h1>
+          <!-- <div class="for_more flex">
             <a href="https://www.onitsukatiger.com/jp/ja-jp/store/all/new-arrival.html" target="_blank">
               <span>FOR MORE</span>
               <div class="arrow_box">
@@ -499,7 +495,7 @@
                 <div class="arrow_bottom"></div>
               </div>
             </a>
-          </div>
+          </div> -->
         </div>
         <div class="slick-list manual_carousel">
           <div class="slick-track draggable">
@@ -600,10 +596,11 @@
     </section>
     <!---------------TOP SELLER 끝 --------------->
     <!-- <section class="gradient_box_reverse"></section> -->
+    <!--------------- 푸터 섹션 시작 --------------->
     <footer id="footer">
       <div class="footer_visual">
         <div class="visual_image">
-          <img src="./onitsukatiger_images/derby_shoes_nobg.png" alt="">
+          <img src="./onitsukatiger_images/derby_shoes_nobg_crop.png" alt="">
         </div>
       </div>
       <div class="footer_detail">
@@ -625,7 +622,8 @@
         </div>
         <div class="detail_lower">
           <span class="company txt_grey">
-            (주)아식스코리아ㅣ 대표 : 김원무 ㅣ<br> 주소 : 서울특별시 중구 을지로 5길 16, 삼화타워 14층 ㅣ<br> 대표 전화 : 02-3663-8335 ㅣ 고객 상담실 : (080) 929-3535 /
+            (주)아식스코리아ㅣ 대표 : 김원무 ㅣ<br> 주소 : 서울특별시 중구 을지로 5길 16, 삼화타워 14층 ㅣ<br> 대표 전화 : 02-3663-8335 ㅣ 고객 상담실 : (080)
+            929-3535 /
             (080) 930-3535
           </span>
           <span class="txt_grey">
@@ -636,34 +634,13 @@
         </div>
       </div>
     </footer>
+    <!--------------- 푸터 섹션 끝 --------------->
     <!-- To Top 버튼 -->
     <div id="toTopBtn" class="to-top-btn" role="button" aria-label="Scroll to top">
       <img src="onitsukatiger_images/oni_logo/oni_icon_nobg.png" alt="To Top" class="to-top-img">
     </div>
   </div>
 
-  <script>
-
-    $(document).ready(function () {
-
-      // Top 버튼 특정 스크롤높이에서만 보이기 / 숨기기
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-          $('#toTopBtn').fadeIn();
-        } else {
-          $('#toTopBtn').fadeOut();
-        }
-      });
-
-      // Top 버튼 클릭시 페이지 상단으로 이동
-      $('#toTopBtn').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 600);
-        return false;
-      });
-
-    });
-
-  </script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
-/*-------------------- 폰트 --------------------*/
-/*---------- Aboreto ----------*/
+/*=============== 폰트 ===============*/
+/*=============== Aboreto ===============*/
 @font-face {
   font-family: 'Aboreto';
   font-style: normal;
@@ -7,12 +7,36 @@
   src: local("※"), url(/fonts/Aboreto/Aboreto-Regular.ttf) format("truetype");
 }
 
-/*---------- Abril_Fatface ----------*/
+/*=============== Abril_Fatface ===============*/
 @font-face {
   font-family: 'Abril_Fatface';
   font-style: normal;
   font-weight: 400;
   src: local("※"), url(/fonts/Abril_Fatface/AbrilFatface-Regular.ttf) format("truetype");
+}
+
+/*=============== Microsoft-Avant ===============*/
+@font-face {
+  font-family: 'Microsoft_Avant';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Microsoft_Avant'), url(/fonts/MicrosoftAvant/microsoft_avant_by_lyricofficial_dczlrta.ttf) format("truetype");
+}
+
+/*=============== Bohme ===============*/
+@font-face {
+  font-family: 'Bohme';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Bohme'), url(/fonts/Bohme/Bohme.ttf) format("truetype");
+}
+
+/*=============== Engravers ===============*/
+@font-face {
+  font-family: 'Engravers';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Engravers'), url(/fonts/Engravers/engravers-mt.ttf) format("truetype");
 }
 
 /*=============== Pragati-Narrow ===============*/
