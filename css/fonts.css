@@ -1,4 +1,12 @@
 /*=============== 폰트 ===============*/
+/*=============== Chopin ===============*/
+@font-face {
+  font-family: 'Chopin';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Chopin'), url(/fonts/Chopin/Chopin-Trial-Light-BF65b1d69151abf.otf) format("opentype");
+}
+
 /*=============== Aboreto ===============*/
 @font-face {
   font-family: 'Aboreto';

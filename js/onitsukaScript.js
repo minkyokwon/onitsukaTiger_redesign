@@ -1,6 +1,19 @@
 // AOS animate
 console.log("왜 안됨");
 
+// lenis smooth scroll
+// const lenis = new Lenis({
+
+//   duration: 2,
+//   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+// });
+
+// function raf(time) {
+//   lenis.raf(time);
+//   requestAnimationFrame(raf);
+// }
+// requestAnimationFrame(raf);
+
 // 헤더 이벤트
 // document.addEventListener("DOMContentLoaded", function () {
 //   const header = document.querySelector(".header_wrap");
@@ -93,11 +106,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const windowHeight = window.innerHeight;
 
     if (footerTop <= windowHeight) {
-      
+
       toTopBtn.style.position = "absolute";
       toTopBtn.style.bottom = `${windowHeight - footerTop + 40}px`;
     } else {
-      
+
       toTopBtn.style.position = "fixed";
       toTopBtn.style.bottom = "40px";
     }
