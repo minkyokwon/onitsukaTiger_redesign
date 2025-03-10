@@ -70,25 +70,18 @@ $(function () {
 });
 
 //검색창 열고 닫기
-const searchOpen = document.querySelector(".menu_wrap > ul > li > .search");
-const searchClose = document.querySelector(".search_close");
-const pageSearch = document.querySelector(".page_search");
+// const searchOpen = document.querySelector(".menu_wrap > ul > li > .search");
+// const searchClose = document.querySelector(".search_close");
+// const pageSearch = document.querySelector(".page_search");
 
-function openPageSearch() {
-  searchOpen.addEventListener("click", function() {
-    pageSearch.classList.remove("hidden");
-  });
-  searchClose.addEventListener("click", function() {
-    pageSearch.classList.add("hidden");
-  });
-}
-
-// 검색창 클리어버튼
-var btnClear = document.querySelector('.search_clear');
-btnClear.addEventListener('click', function () {
-  btnClear.parentNode.querySelector('input').value = "";
-});
-
+// function openPageSearch() {
+//   searchOpen.addEventListener("click", function() {
+//     pageSearch.classList.remove("hidden");
+//   });
+//   searchClose.addEventListener("click", function() {
+//     pageSearch.classList.add("hidden");
+//   });
+// }
 
 
 // full Page

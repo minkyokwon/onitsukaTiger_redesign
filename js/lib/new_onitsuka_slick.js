@@ -9,9 +9,9 @@ $(document).ready(function () {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1320,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
           dots: true
@@ -24,13 +24,6 @@ $(document).ready(function () {
           slidesToScroll: 1
         }
       },
-      // {
-      //   breakpoint: 480,
-      //   settings: {
-      //     slidesToShow: 1,
-      //     slidesToScroll: 1
-      //   }
-      // }
       // You can unslick at a given breakpoint now by adding:
       // settings: "unslick"
       // instead of a settings object
@@ -40,12 +33,12 @@ $(document).ready(function () {
 
 // WHAT IS HOT
 $(document).ready(function () {
-  $('.top_seller .slick-track').slick({
+  $('.top_seller_slick').slick({
     dots: true,
-    infinite: true,
+    infinite: false,
     draggable: true,
     speed: 300,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [
       {
