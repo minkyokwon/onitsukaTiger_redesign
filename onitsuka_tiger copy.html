@@ -21,7 +21,7 @@
   <!-- 외부 파일 -->
   <link rel="stylesheet" href="./css/onitsukaCss.css">
   <link rel="stylesheet" href="./css/fonts.css">
-  <script src="./js/onitsukaScript.js"></script>
+  <script src="./js/onitsukaScript.js"></script>  
   <!-- slick -->
   <script src="./js/lib/new_onitsuka_slick.js"></script>
   <script src="./slick/slick.min.js"></script>
@@ -181,10 +181,10 @@
       }
 
       #header .header_wrap.on .logo_wrap .logo {
-      width: 78px;
-      height: 49px;
-      background: url(./onitsukatiger_images/oni_logo/new-logo-black.png) no-repeat 0 0 / 100% 100%;
-    }
+        width: 78px;
+        height: 49px;
+        background: url(./onitsukatiger_images/oni_logo/new-logo-black.png) no-repeat 0 0 / 100% 100%;
+      }
     }
   </style>
 </head>
@@ -217,25 +217,22 @@
         </div>
       </div>
       <div class="backdrop"></div>
-      <div id="page_search">
+      <div id="page_search" class="page_search hidden">
         <div class="search_wrapper">
-          <div class="region region_search container">
-            <div class="container relative">
-              <button id="search-close" class="absolute right-0" aria-label="닫기"></button>
-              <div class="xl_w-10/12 3xl_w-7/12 md_mx-auto">
-                <!-- 로고 -->
-                <div id="search_logo">
-                  <a href="#none">
-                    <img style="display:block; width:200px;" src="./onitsukatiger_images/oni_logo/scratched_logo.png" alt="logo">
-                  </a>
+          <div class="region_search">
+            <button class="search_close"></button>
+            <div class="search_logo"><a href="#none" class="flex"></a></div>
+            <div class="form_wrapper">
+              <form  id="form" action="" method="get">
+                <div class="form_search">
+                  <input placeholder="Search" class="form-text"
+                    type="text" name="search" value="" size="30" maxlength="60" autocomplete="off">
+                    <button class="search_clear"></button>
                 </div>
-                <div class="views-exposed-form">
-                  <form action="/ko/search" method="get" id="views-exposed-form-acquia-search-search-page" accept-charset="UTF-8">
-                    <div class="js-form-item form-item form-type-search-api-autocomplete js-form-type-search-api-autocomplete form-item-search js-form-item-search"> <label for="edit-search--2">찾기</label> <input placeholder="Search" data-drupal-selector="edit-search" data-search-api-autocomplete-search="acquia_search" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/ko/search_api_autocomplete/acquia_search?display=search_page&amp;&amp;filter=search" type="text" id="edit-search--2" name="search" value="" size="30" maxlength="128" data-once="autocomplete acSearchPage search-api-autocomplete" autocomplete="off"><a class="clear_input_link" href="#" aria-label="Close"></a></div>
-                    <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input data-drupal-selector="edit-submit-acquia-search-2" type="submit" id="edit-submit-acquia-search--2" value="찾기" class="button js-form-submit form-submit"></div>
-                  </form>
+                <div class="form-actions">
+                  <input class="form-submit" type="submit" value="찾기">
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

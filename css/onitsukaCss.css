@@ -77,6 +77,21 @@ body {
   transform: scale(0.8);
 }
 
+.container {
+  width: 100%;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}
 
 img {
   width: 100%;
@@ -246,15 +261,17 @@ caption {
 /*=============== 헤더 섹션 끝 ===============*/
 
 /*=============== 블러 배경 시작 ===============*/
-.top_container .backdrop {
+.backdrop {
   position: fixed;
   inset: 0;
   z-index: 19999;
-  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  background-color: khaki;
   backdrop-filter: blur(20px);
   opacity: 0;
   pointer-events: none;
 }
+
 /*=============== 블러 배경 끝 ===============*/
 
 /*=============== 검색 페이지 섹션 시작 ===============*/
@@ -264,20 +281,99 @@ caption {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 200;
+  z-index: 2000;
   inset: 0;
-}
-
-#page_search #block-sitebranding {
-  text-align: center;
-  margin-bottom: 55px;
 }
 
 #page_search .search_wrapper {
   background-color: #1A1A1A;
-  padding-top: 32px;
-  padding-bottom: 70px;
+  padding: 70px 30px;
 }
+
+#page_search .search_logo {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+#page_search .search_logo a {
+  width: 112px;
+  height: 70px;
+  background: url(/onitsukatiger_images/oni_logo/new-logo-white.png) no-repeat 0 0 / 100% 100%;
+  margin: 0 auto;
+}
+
+#page_search .region_search {
+  max-width: 770px;
+  position: relative;
+  margin: 0 auto;
+}
+
+#page_search .region_search .search_close {
+  position: absolute;
+  cursor: pointer;
+  background: url(/onitsukatiger_images/oni_logo/close_white.svg) no-repeat 0 0 / 100% 100%;
+  height: 24px;
+  width: 24px;
+  top: 20px;
+  right: 2rem;
+  padding: 0;
+}
+
+
+#page_search .region_search form {
+  position: relative;
+}
+
+#page_search .region_search form input {
+  height: 48px;
+}
+
+/* #page_search .region_search form div.form_search {
+  width: 100%;
+} */
+
+#page_search .region_search form div.form_search .search_clear {
+  position: absolute;
+  cursor: pointer;
+  right: 170px;
+  background: url(/onitsukatiger_images/oni_logo/close_white.svg) no-repeat 0 0 / 100% 100%;
+  background-size: 16px;
+  top: 32%;
+  z-index: 99999;
+}
+
+#page_search .region_search form .form_search input {
+  border: 1px solid #717171;
+  background-image: url(/onitsukatiger_images/oni_logo/search_white.svg);
+  background-size: 20px;
+  background-position: 15px center;
+  background-color: #000;
+  background-repeat: no-repeat;
+  padding-left: 45px;
+  font-weight: 300;
+  color: #fff;
+  /* max-width: 770px; */
+  width: 73%;
+  /* padding-right: 150px; */
+  border-radius: 0;
+}
+
+/* #page_search .region_search form div.form_search input:focus {
+  border: 1px solid #717171;
+  outline: none;
+} */
+
+#page_search .region_search form div.form-actions input {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 160px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #212200;
+}
+
 /*=============== 검색 페이지 섹션 끝 ===============*/
 
 /*=============== 헤더 섹션 끝 ===============*/
@@ -1850,6 +1946,7 @@ caption {
   .gradient_box {
     height: 200px;
   }
+
   /*=============== 헤더 섹션 시작 ===============*/
   #header .header_wrap .logo_wrap .logo {
     display: block;
@@ -1873,12 +1970,14 @@ caption {
   #header .header_wrap.on .menu_wrap ul li .user {
     display: none;
   }
+
   /*=============== 헤더 섹션 끝 ===============*/
 
   /*=============== TOP SELLER 시작 ===============*/
   .top_seller .top_seller_wrap {
     padding: 4rem 1rem;
   }
+
   .top_seller .what_is_hot h1 {
     font-size: 32px;
     letter-spacing: -1px;
@@ -1891,7 +1990,7 @@ caption {
     width: 100%;
     flex-direction: column;
   }
-  
+
   /*=============== 이벤트 섹션 시작 ===============*/
 
   /*=============== 푸터 섹션 시작 ===============*/
@@ -1933,6 +2032,7 @@ caption {
   #footer .footer_detail .detail_upper .detail_logo_box ul li img {
     height: 50px;
   }
-/*=============== 푸터 섹션 시작 ===============*/
+
+  /*=============== 푸터 섹션 시작 ===============*/
 
 }
