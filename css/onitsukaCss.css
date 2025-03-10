@@ -42,6 +42,12 @@ body {
   user-select: none;
 }
 
+dd {
+  display: block;
+  margin-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+
 .flex {
   display: flex;
 }
@@ -263,20 +269,26 @@ caption {
 /*=============== 블러 배경 시작 ===============*/
 .backdrop {
   position: fixed;
-  inset: 0;
-  z-index: 19999;
-  /* background-color: rgba(0, 0, 0, 0.8); */
-  background-color: khaki;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(20px);
-  opacity: 0;
   pointer-events: none;
+  z-index: 1999;
 }
 
 /*=============== 블러 배경 끝 ===============*/
 
 /*=============== 검색 페이지 섹션 시작 ===============*/
+body.no_scroll {
+  overflow: hidden;
+}
+
 #page_search {
   position: fixed;
+  display: none;
   top: 0;
   left: 0;
   right: 0;
@@ -375,6 +387,108 @@ caption {
 }
 
 /*=============== 검색 페이지 섹션 끝 ===============*/
+
+/*=============== 메뉴 페이지 섹션 시작 ===============*/
+.page_menu {
+  letter-spacing: 0.1em;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  transition: all 0.3s;
+}
+
+.page_menu .page_menu_wrapper {
+  height: 100%;
+  overflow-y: auto;
+  backface-visibility: hidden;
+}
+
+.page_menu h1 {
+  color: #212200;
+  font-size: 139%;
+  font-weight: 800;
+  margin-bottom: 1.7em;
+  position: relative;
+  text-transform: uppercase;
+}
+.page_menu h1 a {
+  display: block;
+}
+.page_menu h1 a img {
+  display: block;
+  width: 127px;
+}
+
+.page_menu .menu_sub_nav li {
+  padding: 2rem 0;
+}
+
+.page_menu .menu_sub_nav li:hover a {
+  color: #FEE20E;
+}
+
+.page_menu .menu_sub_nav li a {
+  font-size: 1vw;
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+  padding: 0.5em 0;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.page_menu .menu_half_wrap {
+  padding: 0 0 30px;
+}
+.page_menu .primary_nav {
+  margin-top: 30px;
+}
+.page_menu .primary_nav li {
+  margin: 1.6em 0;
+}
+.page_menu .primary_nav dl {
+  margin: 0 0 30px;
+}
+.page_menu .primary_nav dt {
+  color: #FEE20E;
+  font-size: 77%;
+  margin: 0 0 1.5em;
+  position: relative;
+  font-weight: bold;
+}
+.page_menu .primary_nav dt:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1em;
+  height: 1px;
+  width: 10px;
+  background-color: currentColor;
+}
+
+.page_menu .primary_nav li a {
+  display: inline-block;
+  padding: 0.4em;
+  margin: 0;
+}
+.page_menu .primary_nav a {
+  font-size: 124%;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  transition: all 0.3s;
+}
+.page_menu .primary_nav dd:hover a {
+  color: #fff;
+}
+/*=============== 메뉴 페이지 섹션 끝 ===============*/
 
 /*=============== 헤더 섹션 끝 ===============*/
 
@@ -1314,6 +1428,21 @@ caption {
 
   /*=============== 헤더 끝 ===============*/
 
+  /*=============== 메뉴 섹션 시작 ===============*/
+  .page_menu .primary_nav {
+    margin-top: 0;
+  }
+  .page_menu .primary_nav li {
+    float: left;
+    width: 50%;
+  }
+  .page_menu .primary_nav dl {
+    margin: 0;
+  }
+  .page_menu .primary_nav dt {
+    font-size: 108%;
+  }
+  /*=============== 메뉴 섹션 끝 ===============*/
 
   /*=============== NEW ONITSUKA 섹션 시작 ===============*/
   .brand_new .brand_new_wrap {
@@ -1653,6 +1782,67 @@ caption {
   /*=============== toTop 버튼 끝 ===============*/
 }
 
+@media screen and (min-width: 960px) {
+  .page_menu {
+    padding: 50px 0 0;
+  }
+
+  .page_menu .page_menu_wrapper {
+    padding: 0 20%;
+  }
+  .page_menu h1 {
+    font-size: 185%;
+    margin-bottom: 3em;
+  }
+  .page_menu .menu_half_wrap {
+    overflow: hidden;
+  }
+  .page_menu .half_block {
+    width: 100%;
+  }
+  .page_menu .primary_nav {
+    margin-top: 0;
+  }
+  .page_menu .primary_nav li {
+    float: left;
+    width: 50%;
+  }
+  .page_menu .primary_nav li {
+    margin: 2em 0 1em;
+  }
+  .page_menu .primary_nav dl {
+    margin: 0;
+  }
+  .page_menu .primary_nav dt {
+    font-size: 108%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .page_menu .menu_sub_nav {
+    overflow: hidden;
+  }
+  .page_menu .menu_sub_nav h1 {
+    display: inline-block;
+    float: left;
+  }
+  .page_menu .menu_sub_nav ul {
+    float: right;
+  }
+  .page_menu .menu_sub_nav li {
+    float: left;
+  }
+  .page_menu .menu_sub_nav li a {
+    padding: 0 1em 0;
+  }
+  .page_menu .primary_nav {
+    margin-top: 60px;
+  }
+  .page_menu .primary_nav dt {
+    font-size: 100%;
+  }
+}
+
 /*================= @media (max-width: 1450px) ================*/
 @media screen and (max-width:1450px) {
   .section_group .section .scroll_down {
@@ -1783,8 +1973,28 @@ caption {
   /*=============== 푸터 섹션 끝 ===============*/
 }
 
+@media screen and (max-width:960px) {
+  .page_menu {
+    padding: 1rem 2rem 0;
+  }
+  .page_menu .menu_sub_nav li a {
+    font-size: 2rem;
+  }
+  .page_menu .primary_nav dt {
+    font-size: 1rem;
+  }
+}
+
 /*================= @media (max-width: 768px) ================*/
 @media screen and (max-width:768px) {
+  #header .header_wrap .menu_wrap ul li .user {
+    display: none;
+  }
+
+  #header .header_wrap.on .menu_wrap ul li .user {
+    display: none;
+  }
+
   #brand .pagebuilder .onitsuka_tm_logo>img {
     width: 25rem;
   }
@@ -1837,17 +2047,9 @@ caption {
     display: none;
   } */
 
-  #header .header_wrap .menu_wrap ul li .user {
-    display: none;
-  }
-
   /* #header .header_wrap.on .menu_wrap ul li .search {
     display: none;
   } */
-
-  #header .header_wrap.on .menu_wrap ul li .user {
-    display: none;
-  }
 
   /*=============== 헤더 섹션 끝 ===============*/
 

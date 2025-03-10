@@ -1,7 +1,7 @@
 // NEW ONITSUKA
 $(document).ready(function () {
   $('.slick-track').slick({
-    dots: true,
+    dots: false,
     infinite: false,
     draggable: true,
     speed: 300,
@@ -13,7 +13,7 @@ $(document).ready(function () {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: true,
+          infinite: false,
           dots: true
         }
       },
@@ -21,12 +21,12 @@ $(document).ready(function () {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          infinite: false,
+          dots: true
         }
       },
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
+      
     ]
   });
 });
@@ -64,9 +64,7 @@ $(document).ready(function () {
           slidesToScroll: 1
         }
       }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
+      
     ]
   });
 });

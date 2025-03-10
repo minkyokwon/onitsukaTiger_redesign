@@ -1,32 +1,4 @@
-// AOS animate
-console.log("왜 안됨");
-
-// lenis smooth scroll
-// const lenis = new Lenis({
-
-//   duration: 2,
-//   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-// });
-
-// function raf(time) {
-//   lenis.raf(time);
-//   requestAnimationFrame(raf);
-// }
-// requestAnimationFrame(raf);
-
-// 헤더 이벤트
-// document.addEventListener("DOMContentLoaded", function () {
-//   const header = document.querySelector(".header_wrap");
-
-//   header.addEventListener("mouseover", function () {
-//     header.classList.add("on");
-//   });
-
-//   header.addEventListener("mouseout", function () {
-//     header.classList.remove("on");
-//   });
-// });
-
+// 헤더 이벤트 (호버)
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector(".header_wrap");
 
@@ -69,28 +41,66 @@ $(function () {
 
 });
 
-//검색창 열고 닫기
-// const searchOpen = document.querySelector(".menu_wrap > ul > li > .search");
-// const searchClose = document.querySelector(".search_close");
-// const pageSearch = document.querySelector(".page_search");
+// 검색창 이벤트 (esc 추가)
+document.addEventListener("DOMContentLoaded", function () {
+  const searchBtn = document.querySelector(".menu_wrap > ul > li .search");
+  const searchClose = document.querySelector(".search_close");
+  const pageSearch = document.querySelector(".page_search");
+  const backDrop = document.querySelector(".backdrop");
 
-// function openPageSearch() {
-//   searchOpen.addEventListener("click", function() {
-//     pageSearch.classList.remove("hidden");
-//   });
-//   searchClose.addEventListener("click", function() {
-//     pageSearch.classList.add("hidden");
-//   });
-// }
+  function openSearch() {
+    pageSearch.style.display = "block";
+    backDrop.style.display = "block";
+    document.body.classList.add("no_scroll");
+  }
 
+  function closeSearch() {
+    pageSearch.style.display = "none";
+    backDrop.style.display = "none";
+    document.body.classList.remove("no_scroll");
+  }
+    
+    searchBtn.addEventListener("click", openSearch);
 
-// full Page
-// $('#fullpage').fullpage({
-//   sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-//   anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-//   menu: '#menu',
-//   slidesNavigation: true
-// });
+    
+    searchClose.addEventListener("click", closeSearch);
+    backDrop.addEventListener("click", closeSearch);
+
+    // esc 눌러도 검색 창 닫히도록
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeSearch();
+      }
+    });
+  });
+
+// 메뉴 창 이벤트
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.querySelector(".menu_wrap > ul > li .burger");
+  const menuClose = document.querySelector(".main_logo");
+  const pageMenu = document.querySelector(".page_menu");
+  const backDrop = document.querySelector(".backdrop");
+
+  function openMenu() {
+    pageMenu.style.display = "block";
+    backDrop.style.display = "block";
+    document.body.classList.add("no_scroll");
+  }
+
+  function closeMenu() {
+    pageMenu.style.display = "none";
+    backDrop.style.display = "none";
+    document.body.classList.remove("no_scroll");
+  }
+    
+    menuBtn.addEventListener("click", openMenu);
+
+    
+    menuClose.addEventListener("click", closeMenu);
+    backDrop.addEventListener("click", closeMenu);
+
+  });
+
 
 // Top 버튼 스크롤 이벤트
 $(document).ready(function () {
